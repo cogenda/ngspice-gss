@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.3 $  on $Date: 2000/09/03 09:00:08 $ "
+#define CKT "CKTdefs.h $Revision: 1.4 $  on $Date: 2000/09/05 16:56:46 $ "
 
 #define MAXNUMDEVS 32     /* Max number of possible devices; */
 extern int DEVmaxnum;     /* Not sure if still used */
@@ -339,7 +339,7 @@ extern int NIpzSym2(PZtrial **, PZtrial *);
 extern int NIreinit( CKTcircuit *);
 extern int NIsenReinit( CKTcircuit *);
 extern int NIdIter (CKTcircuit *);             
-extern int NInzIter (CKTcircuit *, int, int ); 
+/*extern int NInzIter (CKTcircuit *, int, int ); */ 
 extern IFfrontEnd *SPfrontEnd;
 
 #endif /*CKT*/
