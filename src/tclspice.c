@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.17 2004/06/10 19:56:10 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.18 2004/06/10 22:24:08 stefanjones Exp $	
  */
 
 /*******************/
@@ -1961,7 +1961,8 @@ int tcl_vfprintf(FILE *f, const char *fmt, va_list args_in)
   char *outptr, *bigstr = NULL, *finalstr = NULL;
   int i, nchars, result, escapes = 0;
 
-  if((fileno(f) !=  STDOUT_FILENO && fileno(f) != STDERR_FILENO)
+  if((fileno(f) !=  STDOUT_FILENO && fileno(f) != STDERR_FILENO &&
+	 f != stderr && f != stdout )
 #ifdef THREADS
      || ( fl_running && bgtid == thread_self())
 #endif
