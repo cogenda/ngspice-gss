@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.14 $  on $Date: 2004/01/10 12:07:03 $ "
+#define CKT "CKTdefs.h $Revision: 1.15 $  on $Date: 2004/01/21 19:16:14 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -314,7 +314,7 @@ extern int CKTnames(CKTcircuit *, int *, IFuid **);
 extern int CKTnewAnal( void *, int , IFuid , void **, void *);
 extern int CKTnewEq( void *, void **, IFuid );
 extern int CKTnewNode( void *, void **, IFuid );
-extern int CKTnewTask( void *, void **, IFuid );
+extern int CKTnewTask( void *, void **, IFuid, void ** );
 extern int CKTnoise (CKTcircuit *ckt, int mode, int operation, Ndata *data);
 extern IFuid CKTnodName( CKTcircuit *, int );
 extern void CKTnodOut( CKTcircuit *);
