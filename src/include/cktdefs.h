@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.1.2.2 $  on $Date: 2003/07/18 11:50:45 $ "
+#define CKT "CKTdefs.h $Revision: 1.1.2.3 $  on $Date: 2003/09/30 13:52:29 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -379,7 +379,8 @@ extern int NIpzSym(PZtrial **, PZtrial *);
 extern int NIpzSym2(PZtrial **, PZtrial *);
 extern int NIreinit( CKTcircuit *);
 extern int NIsenReinit( CKTcircuit *);
-extern int NIdIter (CKTcircuit *);             
+extern int NIdIter (CKTcircuit *);
+extern void NInzIter(CKTcircuit *ckt, int posDrive, int negDrive);
 extern IFfrontEnd *SPfrontEnd;
 
 #endif /*CKT*/
