@@ -4,10 +4,14 @@ Author: 1987 Jeffrey M. Hsu
 **********/
 
 /*
-    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedev.h,v 1.1.2.1 2002/11/26 11:39:41 stefanjones Exp $
+    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedev.h,v 1.1.2.2 2003/12/05 13:56:46 stefanjones Exp $
 
     The display device structure.
 */
+
+#ifndef FTEDEV_H_INCLUDED
+#define FTEDEV_H_INCLUDED
+
 
 typedef struct {
     char *name;
@@ -35,3 +39,6 @@ typedef struct {
 } DISPDEVICE;
 
 extern DISPDEVICE *dispdev;
+
+
+#endif

@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.10 2003/08/28 12:51:56 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.11 2003/12/05 13:56:45 stefanjones Exp $	
  */
 
 /*******************/
@@ -54,7 +54,7 @@
 /* To interupt a spice run */
 #include <signal.h>
 #include <setjmp.h>
-extern jmp_buf jbuf;
+extern sigjmp_buf jbuf;
 
 /*Included for the module to access data*/
 #include <dvec.h>
@@ -433,7 +433,7 @@ static int _run(int argc,char **argv){
 
   /* Catch Ctrl-C to break simulations */
   oldHandler = signal(SIGINT,ft_sigintr);
-  if(setjmp(jbuf)!=0) {
+  if(sigsetjmp(jbuf, 1)!=0) {
       signal(SIGINT,oldHandler);
       return TCL_OK;
   }
@@ -1481,7 +1481,7 @@ int Spice_Init(Tcl_Interp *interp) {
     /* Read the user config files */
     /* To catch interrupts during .spiceinit... */
     old_sigint = signal(SIGINT, ft_sigintr);
-    if (setjmp(jbuf) == 1) {
+    if (sigsetjmp(jbuf, 1) == 1) {
         fprintf(cp_err, "Warning: error executing .spiceinit.\n");
         goto bot;
     }
