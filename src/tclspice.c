@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.5 2003/06/25 12:28:23 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.6 2003/07/08 16:13:19 stefanjones Exp $	
  */
 
 /*******************/
@@ -42,6 +42,11 @@
 #include <sys/timeb.h>
 #endif
 #endif
+
+/* To interupt a spice run */
+#include <signal.h>
+#include <setjmp.h>
+extern jmp_buf jbuf;
 
 /*Included for the module to access data*/
 #include <dvec.h>
@@ -367,12 +372,20 @@ static int _thread_stop(){
 static int _run(int args,char **argv){
   char buf[1024] = "", *string;
   int i;
+  sighandler_t oldHandler;
   bool fl_bg = FALSE;
   /* run task in background if preceeded by "bg"*/
   if(!strcmp(argv[0],"bg")) {
     args--;
     argv = &argv[1];
     fl_bg = TRUE;
+  }
+
+  /* Catch Ctrl-C to break simulations */
+  oldHandler = signal(SIGINT,ft_sigintr);
+  if(setjmp(jbuf)!=0) {
+      signal(SIGINT,oldHandler);
+      return TCL_OK;
   }
 
   /*build a char * to pass to cp_evloop */
@@ -391,6 +404,7 @@ static int _run(int args,char **argv){
   } else 
     /* halt (pause) a bg run */
     if(!strcmp(argv[0],"halt")){
+      signal(SIGINT,oldHandler);
       return _thread_stop();
     } else
       /* backwards compatability with old command */
@@ -414,6 +428,7 @@ static int _run(int args,char **argv){
 	  cp_evloop(buf);
 	}
       }
+  signal(SIGINT,oldHandler);
   return TCL_OK;
 }
    
