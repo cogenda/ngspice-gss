@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.1.2.1 $  on $Date: 2002/11/26 11:39:41 $ "
+#define CKT "CKTdefs.h $Revision: 1.1.2.2 $  on $Date: 2003/07/18 11:50:45 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -282,6 +282,7 @@ extern int CKTdestroy( void *);
 extern int CKTdltAnal( void *, void *, void *);
 extern int CKTdltInst( void *, void *);
 extern int CKTdltMod( void *, void *);
+extern int CKTdltNNum(void *, int );
 extern int CKTdltNod( void *, void *);
 extern int CKTdoJob( void *, int , void *);
 extern void CKTdump( CKTcircuit *, double, void *);
@@ -344,7 +345,7 @@ extern int DCOaskQuest( CKTcircuit *, void *, int , IFvalue *);
 extern int DCOsetParm( CKTcircuit  *, void *, int , IFvalue *);
 extern int DCTaskQuest( CKTcircuit *, void *, int , IFvalue *);
 extern int DCTsetParm( CKTcircuit  *, void *, int , IFvalue *);
-extern int DCop( CKTcircuit *);
+extern int DCop( CKTcircuit *, int );
 extern int DCtrCurv( CKTcircuit *, int );
 extern int DCtran( CKTcircuit *, int );
 extern int DISTOan(CKTcircuit *, int);
