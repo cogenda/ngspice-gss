@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.1 2002/11/26 11:38:31 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.2 2003/01/22 08:57:13 stefanjones Exp $	
  */
 
 /*******************/
@@ -153,7 +153,7 @@ void blt_init(void *tmp){
   /* reset varaibles and free*/
   if(vectors){
     resetTriggers();
-    for(i = blt_vnum, blt_vnum = 0/*stops vector access*/;i > 0;i--){
+    for(i = blt_vnum-1, blt_vnum = 0/*stops vector access*/;i >= 0;i--){
       if(run->writeOut)
 	FREE(vectors[i].data);
       FREE(vectors[i].name);
