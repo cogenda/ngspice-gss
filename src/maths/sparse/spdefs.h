@@ -27,8 +27,8 @@
  *  software for any purpose.  It is provided `as is', without express
  *  or implied warranty.
  *
- *  $Date: 2001/02/06 18:29:13 $
- *  $Revision: 1.4 $
+ *  $Date: 2001/02/09 23:17:27 $
+ *  $Revision: 1.5 $
  */
 
 
@@ -259,7 +259,7 @@
 /* A new calloc */
 #ifndef HAVE_LIBGC
 #define CALLOC(ptr,type,number)                    	     \
-{ ptr = (type *) calloc(type, number); 		             \
+{ ptr = (type *) calloc(number, sizeof(type)); 		             \
 }
 #else /* HAVE_LIBCG */
 #define CALLOC(ptr,type,number)                         	\
