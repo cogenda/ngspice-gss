@@ -1,9 +1,10 @@
 #ifndef PZDEFS
-#define PZDEFS "PZdefs.h $Revision: 1.1 $  on $Date: 2000/04/27 20:04:01 $ "
+#define PZDEFS "PZdefs.h $Revision: 1.2 $  on $Date: 2003/08/23 19:54:52 $ "
 
     /* structure used to describe an PZ analysis to be performed */
 
 #include "jobdefs.h"
+#include <math.h>
 #include "complex.h"
 
 typedef struct strial {
