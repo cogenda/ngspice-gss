@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.12 $  on $Date: 2003/07/23 19:36:50 $ "
+#define CKT "CKTdefs.h $Revision: 1.13 $  on $Date: 2003/08/11 20:53:51 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -14,7 +14,7 @@
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 
 
-#define MAXNUMDEVS 40	/* Max number of possible devices PN:XXX may cause toubles*/
+#define MAXNUMDEVS 64	/* Max number of possible devices PN:XXX may cause toubles*/
 extern int DEVmaxnum;	/* Not sure if still used */
 #define MAXNUMDEVNODES 4	/* Max No. of nodes per device */
                          /* Need to change for SOI devs ? */
