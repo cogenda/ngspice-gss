@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.16 2004/06/04 22:48:19 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.17 2004/06/10 19:56:10 stefanjones Exp $	
  */
 
 /*******************/
@@ -485,8 +485,6 @@ static int _thread_stop(){
     }
 #ifdef HAVE_LIBPTHREAD
     pthread_join(tid, NULL);
-#else
-    Tcl_JoinThread(tid,NULL);
 #endif
     fl_running = FALSE;
     ft_intrpt = FALSE;
@@ -536,7 +534,7 @@ static int _run(int argc,char **argv){
     pthread_create(&tid,NULL,_thread_run,(void *)string);
 #else
     Tcl_CreateThread(&tid,(Tcl_ThreadCreateProc *)_thread_run,string,
-        TCL_THREAD_STACK_DEFAULT,TCL_THREAD_JOINABLE);
+        TCL_THREAD_STACK_DEFAULT,TCL_THREAD_NOFLAGS);
 #endif
   } else 
     /* halt (pause) a bg run */
