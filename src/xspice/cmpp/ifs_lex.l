@@ -1,6 +1,6 @@
 %option yylineno
 %option noyywrap
-%{ /* $Id: ifs_lex.l,v 1.3 2004/02/14 19:19:32 pnenzi Exp $ */
+%{ /* $Id: ifs_lex.l,v 1.4 2004/02/14 19:52:58 pnenzi Exp $ */
 
 /*============================================================================
 FILE  ifs_lex.l
