@@ -4,9 +4,9 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.5 $  on $Date: 2000/09/05 19:48:22 $ "
+#define CKT "CKTdefs.h $Revision: 1.6 $  on $Date: 2000/12/08 16:58:47 $ "
 
-#define MAXNUMDEVS 32		/* Max number of possible devices; */
+#define MAXNUMDEVS 33		/* Max number of possible devices; */
 extern int DEVmaxnum;		/* Not sure if still used */
 #define MAXNUMDEVNODES 4	/* Max No. of nodes per device */
 				/* Need to change for SOI devs ? */
