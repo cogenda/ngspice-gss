@@ -4,7 +4,15 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.11 $  on $Date: 2001/05/05 09:54:41 $ "
+#define CKT "CKTdefs.h $Revision: 1.12 $  on $Date: 2003/07/23 19:36:50 $ "
+
+/* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
+#ifdef XSPICE
+#include "evt.h"
+#include "enh.h"
+#endif
+/* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
+
 
 #define MAXNUMDEVS 40	/* Max number of possible devices PN:XXX may cause toubles*/
 extern int DEVmaxnum;	/* Not sure if still used */
@@ -247,6 +255,13 @@ typedef struct {
     int CKTtroubleNode;		/* Non-convergent node number */
     GENinstance *CKTtroubleElt;	/* Non-convergent device instance */
 
+/* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
+#ifdef XSPICE
+    Evt_Ckt_Data_t *evt;  /* all data about event driven stuff */
+    Enh_Ckt_Data_t *enh;  /* data used by general enhancements */
+#endif
+/* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
+
 } CKTcircuit;
 
 /* Now function prottypes */
@@ -271,6 +286,7 @@ extern int CKTdestroy( void *);
 extern int CKTdltAnal( void *, void *, void *);
 extern int CKTdltInst( void *, void *);
 extern int CKTdltMod( void *, void *);
+extern int CKTdltNNum(void *, int );
 extern int CKTdltNod( void *, void *);
 extern int CKTdoJob( void *, int , void *);
 extern void CKTdump( CKTcircuit *, double, void *);
@@ -333,7 +349,7 @@ extern int DCOaskQuest( CKTcircuit *, void *, int , IFvalue *);
 extern int DCOsetParm( CKTcircuit  *, void *, int , IFvalue *);
 extern int DCTaskQuest( CKTcircuit *, void *, int , IFvalue *);
 extern int DCTsetParm( CKTcircuit  *, void *, int , IFvalue *);
-extern int DCop( CKTcircuit *);
+extern int DCop( CKTcircuit *, int ); /* va: int avoids "init from incompatible pointer type" */ 
 extern int DCtrCurv( CKTcircuit *, int );
 extern int DCtran( CKTcircuit *, int );
 extern int DISTOan(CKTcircuit *, int);
