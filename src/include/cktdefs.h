@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.10 $  on $Date: 2001/05/02 20:33:10 $ "
+#define CKT "CKTdefs.h $Revision: 1.11 $  on $Date: 2001/05/05 09:54:41 $ "
 
 #define MAXNUMDEVS 40	/* Max number of possible devices PN:XXX may cause toubles*/
 extern int DEVmaxnum;	/* Not sure if still used */
@@ -49,7 +49,23 @@ typedef struct sCKTnode {
 
 
 typedef struct {
-    GENmodel *CKThead[MAXNUMDEVS]; /* The max number of loadable devices */
+
+
+/* gtri - begin - wbk - change declaration to allow dynamic sizing */
+
+/* An associated change is made in CKTinit.c to alloc the space */
+/* required for the pointers.  No changes are needed to the source */
+/* code at the 3C1 level, although the compiler will generate */
+/* slightly different code for references to this data. */
+
+/*  GENmodel *CKThead[MAXNUMDEVS]; The max number of loadable devices */
+    GENmodel **CKThead;
+
+/* gtri - end   - wbk - change declaration to allow dynamic sizing */
+
+/*    GENmodel *CKThead[MAXNUMDEVS];  maschmann : deleted */
+
+
     STATistics *CKTstat;	/* The STATistics structure */
     double *(CKTstates[8]);	/* Used as memory of past steps ??? */
 
