@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.12 2004/05/21 18:38:00 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.13 2004/05/26 19:49:28 stefanjones Exp $	
  */
 
 /*******************/
@@ -53,6 +53,9 @@
 
 /* To interupt a spice run */
 #include <signal.h>
+#ifndef sighandler_t
+typedef void (*sighandler_t)(int);
+#endif
 #include <setjmp.h>
 extern sigjmp_buf jbuf;
 
