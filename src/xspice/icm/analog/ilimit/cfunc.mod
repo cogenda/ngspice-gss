@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:33 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2004/07/09 18:37:56 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -117,7 +117,7 @@ void cm_ilimit(ARGS)  /* structure holding parms,
 {
     double in_offset,gain,r_out_source,r_out_sink,i_limit_source,
            i_limit_sink,v_pwr_range,i_source_range,i_sink_range,
-           r_out_domain,out_lower_limit,out_upper_limit,veq,pveq_pvin,
+           r_out_domain,/*out_lower_limit,out_upper_limit,*/veq,pveq_pvin,
            pveq_pvpos,pveq_pvneg,r_out,pr_out_px,i_out,i_threshold_lower,
            i_threshold_upper,i_pos_pwr,pi_out_pvin,pi_pos_pvneg,
            pi_pos_pvpos,pi_pos_pvout,i_neg_pwr,pi_neg_pvin,pi_neg_pvneg,

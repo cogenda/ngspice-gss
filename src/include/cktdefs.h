@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.15 $  on $Date: 2004/01/21 19:16:14 $ "
+#define CKT "CKTdefs.h $Revision: 1.16 $  on $Date: 2004/07/09 18:37:41 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -337,7 +337,7 @@ extern int CKTsenUpdate( CKTcircuit *);
 extern int CKTsetAnalPm( void *, void *, int , IFvalue *, IFvalue *);
 extern int CKTsetBreak( CKTcircuit *, double );
 extern int CKTsetNodPm( void *, void *, int , IFvalue *, IFvalue *);
-extern int CKTsetOpt( void *, void *, int , IFvalue *);
+extern int CKTsetOpt( CKTcircuit *, void *, int , IFvalue *);
 extern int CKTsetup( CKTcircuit *);
 extern int CKTunsetup(CKTcircuit *); 
 extern int CKTtemp( CKTcircuit *);

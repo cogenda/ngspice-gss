@@ -1,6 +1,6 @@
 %option yylineno
 %option noyywrap
-%{ /* $Id: ifs_lex.l,v 1.4 2004/02/14 19:52:58 pnenzi Exp $ */
+%{ /* $Id: ifs_lex.l,v 1.5 2004/07/09 18:37:55 pnenzi Exp $ */
 
 /*============================================================================
 FILE  ifs_lex.l
@@ -49,6 +49,7 @@ int yyival;
 double yydval;
 extern int atoi();
 extern double atof();
+extern void ifs_yyerror (char*);
 
 /*
  * IFS specs are case insensitive:

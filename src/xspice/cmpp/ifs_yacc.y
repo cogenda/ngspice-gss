@@ -1,4 +1,4 @@
-%{ /* $Id: ifs_yacc.y,v 1.4 2004/02/14 19:52:58 pnenzi Exp $ */
+%{ /* $Id: ifs_yacc.y,v 1.5 2004/07/09 18:37:55 pnenzi Exp $ */
 
 /*============================================================================
 FILE  ifs_yacc.y
@@ -43,6 +43,8 @@ NON-STANDARD FEATURES
 ============================================================================*/
 
 #include <assert.h>
+#include <stdlib.h>
+#include <string.h>
 #include "ifs_yacc_y.h"
 
 #define	yymaxdepth ifs_yymaxdepth
@@ -90,7 +92,8 @@ extern int yylineno;
 extern int yyival;
 extern double yydval;
 extern char *ifs_yytext;
-extern char *strdup();
+extern void yyerror (char*);
+ extern int ifs_yylex();
 
 Boolean_t parser_just_names;
 static Boolean_t saw_model_name;
@@ -186,6 +189,8 @@ static int find_conn_ref (name)
    }
    sprintf (str, "Port `%s' not found", name);
    yyerror (str);
+
+   return 0;
 }
 
 typedef enum {C_DOUBLE, C_BOOLEAN, C_POINTER, C_UNDEF} Ctype_Class_t;

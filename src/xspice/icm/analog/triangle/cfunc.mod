@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:36 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2004/07/09 18:37:58 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -119,6 +119,8 @@ NON-STANDARD FEATURES
 
 ==============================================================================*/
 
+#include <stdlib.h>
+
 /*=== CM_TRIANGLE ROUTINE ===*/
 
 /*****************************************************
@@ -155,14 +157,14 @@ void cm_triangle(ARGS)  /* structure holding parms,
     double *x;         /* pointer holds the values of the control array */
 	double *y;         /* pointer holds the values of the freq array    */
 	double cntl_input; /* control input                                 */
-	double out;        /* output                                        */
+	/*double out;*/    /* output                                        */
 	double dout_din;   /* partial out wrt to control input              */
 	double output_low; /* lowest point of the wave                      */
 	double output_hi;  /* highest point of the wave                     */
 	double dphase;     /* percent into the current phase of the cycle   */
    	double *phase;     /* instantaneous phase value                     */
 	double *phase1;    /* pointer to the previous phase value           */
-	double freq;       /* actual frequency of the wave                  */
+	double freq=0.0;       /* actual frequency of the wave                  */
 	double d_cycle;    /* duty cycle                                    */
 	double *t1;        /* pointer which stores time1                    */
 	double *t2;        /* pointer which stores time2                    */

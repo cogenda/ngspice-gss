@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:38 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2004/07/09 18:37:59 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -127,7 +127,7 @@ NON-STANDARD FEATURES
 void cm_d_inverter(ARGS) 
 
 {
-    int                    i;   /* generic loop counter index */
+    /*int                    i;*/   /* generic loop counter index */
          
                         
 

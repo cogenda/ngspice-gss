@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:45 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2004/07/09 18:38:05 pnenzi Exp $ */
 
 
 #define TS 0
@@ -11,7 +11,7 @@ void ucm_real_to_v (ARGS)
     double *t, *v;
     double *in;
 
-    double out;
+    /*double out;*/
 
 
     in = INPUT(in);

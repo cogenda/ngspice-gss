@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:37 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2004/07/09 18:37:58 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -317,6 +317,8 @@ void cm_adc_bridge(ARGS)
     
                             case ZERO:
                                 OUTPUT_DELAY(out[i]) = PARAM(rise_delay);        
+                                break;
+                            case UNKNOWN: /* should never get here! */
                                 break;
                             }
                         }
