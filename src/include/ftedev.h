@@ -4,7 +4,7 @@ Author: 1987 Jeffrey M. Hsu
 **********/
 
 /*
-    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedev.h,v 1.1.1.1 2000/04/27 20:04:01 pnenzi Exp $
+    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedev.h,v 1.1.1.2 2002/11/26 10:13:07 stefanjones Exp $
 
     The display device structure.
 */
@@ -31,7 +31,7 @@ typedef struct {
     int (*MakeMenu)();
     int (*MakeDialog)();
     int (*Input)();
-    int (*DatatoScreen)();
+    void (*DatatoScreen)();
 } DISPDEVICE;
 
 extern DISPDEVICE *dispdev;

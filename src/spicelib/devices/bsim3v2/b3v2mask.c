@@ -1,17 +1,3 @@
-/* $Id: b3v2mask.c,v 1.1.1.1 2000/04/27 20:03:59 pnenzi Exp $  */
-/*
- $Log: b3v2mask.c,v $
- Revision 1.1.1.1  2000/04/27 20:03:59  pnenzi
- Imported sources
-
- * Revision 3.2 1998/6/16  18:00:00  Weidong
- * BSIM3v3.2 release
- *
-*/
-static char rcsid[] = "$Id: b3v2mask.c,v 1.1.1.1 2000/04/27 20:03:59 pnenzi Exp $";
-
-/*************************************/
-
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1995 Min-Chie Jeng and Mansun Chan.

@@ -4,7 +4,7 @@ Author: 1987 Jeffrey M. Hsu
 **********/
 
 /*
-    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedbgra.h,v 1.1.1.1 2000/04/27 20:04:01 pnenzi Exp $
+    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/ftedbgra.h,v 1.1.1.2 2002/11/26 10:13:05 stefanjones Exp $
 
     External definitions for the graph database module.
 */

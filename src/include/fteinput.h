@@ -4,8 +4,6 @@ Author: 1988 Jeffrey M. Hsu
 **********/
 
 /*
-    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/fteinput.h,v 1.1.1.1 2000/04/27 20:04:01 pnenzi Exp $
-
     Defs to use the Input routine.
 
     char_option is used by the lexer and the command interpreter
@@ -22,7 +20,7 @@ Author: 1988 Jeffrey M. Hsu
 
 
 #include <stdio.h>
-#include "ftegraph.h"
+#include "graph.h"
 
 typedef enum {
     error_option,       /* a reply option only */
