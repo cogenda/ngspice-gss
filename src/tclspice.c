@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.23 2004/07/20 22:37:50 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.24 2004/07/21 20:25:27 stefanjones Exp $	
  */
 
 /*******************/
@@ -922,6 +922,12 @@ static int plot_getvector TCL_CMDPROCARGS(clientData,interp,argc,argv) {
   return TCL_OK;
 }
 
+static int plot_getplot TCL_CMDPROCARGS(clientData,interp,argc,argv) {
+  if(plot_cur) {
+  	Tcl_SetObjResult(interp,Tcl_NewStringObj(plot_cur->pl_typename,-1));
+  }
+  return TCL_OK;
+}
 
 /*******************************************/
 /*           Misc functions                */
@@ -2063,6 +2069,7 @@ bot:
     Tcl_CreateCommand(interp, TCLSPICE_prefix "plot_nvars", plot_nvars, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
     Tcl_CreateCommand(interp, TCLSPICE_prefix "plot_defaultscale", plot_defaultscale, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
     Tcl_CreateCommand(interp, TCLSPICE_prefix "plot_getvector", plot_getvector, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+    Tcl_CreateCommand(interp, TCLSPICE_prefix "getplot", plot_getplot, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
 
 	Tcl_CreateCommand(interp, TCLSPICE_prefix "registerTrigger", registerTrigger, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
   	Tcl_CreateCommand(interp, TCLSPICE_prefix "registerTriggerCallback", registerTriggerCallback, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
