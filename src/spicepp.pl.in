@@ -14,7 +14,7 @@ eval '(exit $?0)' &&
 #  for complete details.
 #
 
-$ver= '$Id: spicepp.pl,v 1.1.2.2 2004/06/22 23:13:59 stefanjones Exp $ ';
+$ver= '$Id: spicepp.pl.in,v 1.1.2.1 2004/06/22 23:13:59 stefanjones Exp $ ';
 
 require "getopts.pl";
 &Getopts("hi");
@@ -307,7 +307,7 @@ sub expand_meas  {
       push(@xtra, ".control");
       push(@xtra, "print time $trig $targ > meas.data");
       push(@xtra, "echo $_ > meas.ctl");
-      push(@xtra, "shell /usr/lib/spice/measure_spice.pl $name");
+      push(@xtra, "shell %LIB_DIR%/spice/measure_spice.pl $name");
       push(@xtra, ".endc");
       splice(@deck,$i,1,@xtra);
       @xtra=();
