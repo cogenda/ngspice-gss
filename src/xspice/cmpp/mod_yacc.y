@@ -1,4 +1,4 @@
-%{ /* $Id: mod_yacc.y,v 1.1.2.1 2003/06/26 10:05:44 stefanjones Exp $ */
+%{ /* $Id: mod_yacc.y,v 1.1.2.2 2003/06/26 13:11:23 stefanjones Exp $ */
 
 /*============================================================================
 FILE  mod_yacc.y
@@ -52,17 +52,11 @@ NON-STANDARD FEATURES
 
 Ifs_Table_t *mod_ifs_table;
 
-extern char mod_yytext[];
+extern char *mod_yytext;
 extern FILE* mod_yyout;
 
-/* saj - use standard includes */
 #include <string.h>
 #include <ctype.h>
-/*
-extern char *strdup(char*);
-extern int strlen(char*);
-extern char *strcat(char*, char*);
-*/
 
 int mod_num_errors;
 
@@ -251,7 +245,6 @@ static int check_id (Sub_Id_t sub_id, Id_Kind_t kind, Boolean_t do_subscript)
 	    sub_id.id);
    yyerror (error_str);
    mod_num_errors++;
-   abort();
    return -1;
 }
 

@@ -1,7 +1,6 @@
 %option yylineno
 %option noyywrap
-%array
-%{ /* $Id: mod_lex.l,v 1.1.2.1 2003/06/26 10:05:44 stefanjones Exp $ */
+%{ /* $Id: mod_lex.l,v 1.1.2.2 2003/06/26 13:11:23 stefanjones Exp $ */
 
 /*============================================================================
 FILE  mod_lex.l
