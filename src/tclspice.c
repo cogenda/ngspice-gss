@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.19 2004/07/07 22:10:46 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.20 2004/07/07 22:11:38 stefanjones Exp $	
  */
 
 /*******************/
@@ -794,7 +794,7 @@ static int plot_getvector TCL_CMDPROCARGS(clientData,interp,argc,argv) {
 
   if (argc < 4 || argc > 6) {
     Tcl_SetResult(interp,
-        "Wrong # args. spice::plot_getvector spice_variable vecName ?start? ?end?",
+        "Wrong # args. spice::plot_getvector plot spice_variable vecName ?start? ?end?",
         TCL_STATIC);
     return TCL_ERROR;
   }
