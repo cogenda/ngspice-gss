@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.25 2004/08/04 22:34:07 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.26 2004/08/04 23:16:06 stefanjones Exp $	
  */
 
 /*******************/
@@ -1339,11 +1339,13 @@ static void escape_brackets(char *string) {
     if(string[i] == ']' || string[i] == '[') {
       int j;
       for(j=printed;j>=i;j--) {
-        string[j+1] = string[j];
+        string[j+3] = string[j];
       }
       string[i] = '\\';
-      i++;
-      printed++;
+      string[i+1] = '\\';
+      string[i+2] = '\\';
+      i+=3;
+      printed+=3;
     }
   }
   return;
