@@ -32,8 +32,8 @@
  *  software for any purpose.  It is provided `as is', without express
  *  or implied warranty.
  *
- *  $Date: 2000/07/03 15:28:50 $
- *  $Revision: 1.1 $
+ *  $Date: 2000/10/14 13:16:53 $
+ *  $Revision: 1.2 $
  */
 
 
@@ -275,7 +275,7 @@
  *      of elements for which memory is initially allocated and specifically
  *      reserved for fill-ins in spCreate(). [4]
  *  ELEMENTS_PER_ALLOCATION
- *      The number of matrix elements requested from the malloc utility on
+ *      The number of matrix elements requested from the tmalloc utility on
  *      each call to it.  Setting this value greater than 1 reduces the
  *      amount of overhead spent in this system call. On a virtual memory
  *      machine, its good to allocate slightly less than a page worth of
