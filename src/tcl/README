@@ -1,5 +1,5 @@
 Spice Tcl module
-$Id: README,v 1.1.2.3 2003/03/31 20:31:39 stefanjones Exp $
+$Id: README,v 1.1.2.4 2003/08/04 08:59:48 stefanjones Exp $
 DESCRIPTION
 
 Contained in this package is the source code for a spice tcl module and ng-spice-rework-14. 
@@ -34,7 +34,7 @@ Installation:
 			
 	The install commands are:
 		From the root directory of the source:
-		./configure --enable-tcl --enable-experimental --disable-shared
+		./configure --with-tcl --enable-experimental --enable-xspice
 		make tcl
 	    And as root:
 		make install-tcl
