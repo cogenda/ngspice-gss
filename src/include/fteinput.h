@@ -4,7 +4,7 @@ Author: 1988 Jeffrey M. Hsu
 **********/
 
 /*
-    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/fteinput.h,v 1.1 2000/04/27 20:04:01 pnenzi Exp $
+    $Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/fteinput.h,v 1.1.1.1 2000/04/27 20:04:01 pnenzi Exp $
 
     Defs to use the Input routine.
 

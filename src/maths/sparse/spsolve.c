@@ -38,7 +38,7 @@
 static char copyright[] =
     "Sparse1.3: Copyright (c) 1985,86,87,88,89,90 by Kenneth S. Kundert";
 static char RCSid[] =
-    "@(#)$Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/maths/sparse/spsolve.c,v 1.1 2000/04/27 20:04:01 pnenzi Exp $";
+    "@(#)$Header: /cvsroot/ngspice/ngspice/ng-spice-rework/src/maths/sparse/spsolve.c,v 1.1.1.1 2000/04/27 20:04:01 pnenzi Exp $";
 #endif
 
 

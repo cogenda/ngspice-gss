@@ -3,7 +3,7 @@
  * Modified 1999 Paolo Nenzi - Removed non STDC definitions
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.1 $  on $Date: 2000/04/27 20:04:01 $ "
+#define CKT "CKTdefs.h $Revision: 1.1.1.1 $  on $Date: 2000/04/27 20:04:01 $ "
 
 #define MAXNUMDEVS 32     /* Max number of possible devices; */
 extern int DEVmaxnum;     /* Not sure if still used */

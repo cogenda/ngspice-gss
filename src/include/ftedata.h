@@ -1,5 +1,5 @@
 
-/* RCS Info: $Revision: 1.1 $ on $Date: 2000/04/27 20:04:01 $
+/* RCS Info: $Revision: 1.1.1.1 $ on $Date: 2000/04/27 20:04:01 $
  *         $Source: /cvsroot/ngspice/ngspice/ng-spice-rework/src/include/Attic/ftedata.h,v $
  * Copyright (c) 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
  *

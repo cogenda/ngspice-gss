@@ -3,7 +3,7 @@
  * Modified: Paolo Nenzi 1999
  */
 #ifndef CMPLX
-#define CMPLX "complex.h $Revision: 1.1 $  on $Date: 2000/04/27 20:04:01 $ "
+#define CMPLX "complex.h $Revision: 1.1.1.1 $  on $Date: 2000/04/27 20:04:01 $ "
 
 /*  header file containing definitions for complex functions
  *

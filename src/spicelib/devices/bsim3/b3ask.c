@@ -1,8 +1,8 @@
-/* $Id: b3ask.c,v 1.1 2000/04/27 20:03:59 pnenzi Exp $  */
+/* $Id: b3ask.c,v 1.1.1.1 2000/04/27 20:03:59 pnenzi Exp $  */
 /*
  $Log: b3ask.c,v $
- Revision 1.1  2000/04/27 20:03:59  pnenzi
- Initial revision
+ Revision 1.1.1.1  2000/04/27 20:03:59  pnenzi
+ Imported sources
 
  Revision 1.1.1.1  1999/11/15 10:35:08  root
  Rework imported sources
@@ -17,7 +17,7 @@
  * BSIM3v3.2.2 release
  *
 */
-static char rcsid[] = "$Id: b3ask.c,v 1.1 2000/04/27 20:03:59 pnenzi Exp $";
+static char rcsid[] = "$Id: b3ask.c,v 1.1.1.1 2000/04/27 20:03:59 pnenzi Exp $";
 
 /*************************************/
 
