@@ -27,8 +27,8 @@
  *  software for any purpose.  It is provided `as is', without express
  *  or implied warranty.
  *
- *  $Date: 2003/08/14 11:46:55 $
- *  $Revision: 1.9 $
+ *  $Date: 2003/08/23 19:49:03 $
+ *  $Revision: 1.10 $
  */
 
 
@@ -368,7 +368,11 @@ typedef  struct
 
 /* Allocation */
 
-#define ALLOC(type,number)  ((type *)tmalloc((unsigned)(sizeof(type)*(number))))
+extern void * tmalloc(size_t);
+extern void * txfree(void *);
+extern void * trealloc(void *, size_t);
+
+#define ALLOC(type,number)  ((type *)tmalloc((size_t)(sizeof(type)*(number))))
 #define REALLOC(ptr,type,number)  \
            ptr = (type *)trealloc((char *)ptr,(unsigned)(sizeof(type)*(number)))
 #define FREE(ptr) { if ((ptr) != NULL) txfree((char *)(ptr)); (ptr) = NULL; }
