@@ -1,6 +1,6 @@
 %option yylineno
 %option noyywrap
-%{ /* $Id: mod_lex.l,v 1.2 2003/07/23 19:59:58 pnenzi Exp $ */
+%{ /* $Id: mod_lex.l,v 1.3 2004/02/14 19:19:32 pnenzi Exp $ */
 
 /*============================================================================
 FILE  mod_lex.l
@@ -41,8 +41,8 @@ NON-STANDARD FEATURES
 
 ============================================================================*/
 
+#include "mod_yacc_y.h"
 #include "mod_yacc.h"
-#include "mod_tok.h"
 
 %}
 

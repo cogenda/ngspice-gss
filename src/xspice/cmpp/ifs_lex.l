@@ -1,6 +1,6 @@
 %option yylineno
 %option noyywrap
-%{ /* $Id: ifs_lex.l,v 1.2 2003/07/23 19:59:58 pnenzi Exp $ */
+%{ /* $Id: ifs_lex.l,v 1.3 2004/02/14 19:19:32 pnenzi Exp $ */
 
 /*============================================================================
 FILE  ifs_lex.l
@@ -42,8 +42,8 @@ NON-STANDARD FEATURES
 
 ============================================================================*/
 
+#include "ifs_yacc_y.h"
 #include "ifs_yacc.h"
-#include "ifs_tok.h"
 
 int yyival;
 double yydval;
