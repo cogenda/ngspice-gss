@@ -1,7 +1,7 @@
 /* Copied and written by Stefan Jones (stefan.jones@multigig.com) at Multigig Ltd
  * Under GPL licence
  * Code based on and copied from ScriptEDA ( http://www-cad.eecs.berkeley.edu/~pinhong/scriptEDA )
- * $Id: tclspice.c,v 1.1.2.24 2004/07/21 20:25:27 stefanjones Exp $	
+ * $Id: tclspice.c,v 1.1.2.25 2004/08/04 22:34:07 stefanjones Exp $	
  */
 
 /*******************/
@@ -1332,6 +1332,23 @@ static void dvecToBlt(Blt_Vector *Data, struct dvec *x) {
   return;
 }
 
+static void escape_brackets(char *string) {
+  int printed=strlen(string), i;
+
+  for(i=0;i<printed;i++) {
+    if(string[i] == ']' || string[i] == '[') {
+      int j;
+      for(j=printed;j>=i;j--) {
+        string[j+1] = string[j];
+      }
+      string[i] = '\\';
+      i++;
+      printed++;
+    }
+  }
+  return;
+}
+
 int blt_plot(struct dvec *y,struct dvec *x,int new){
   static int ctr=-1;
   Blt_Vector *X_Data=NULL, *Y_Data=NULL;
@@ -1357,6 +1374,7 @@ int blt_plot(struct dvec *y,struct dvec *x,int new){
   sprintf(buf,"spice_gr_Plot %s %s %s %s %s %s %d",
 	  x->v_name, ft_typenames(x->v_type), ft_typabbrev(x->v_type),
 	  y->v_name, ft_typenames(y->v_type), ft_typabbrev(y->v_type),ctr);
+  escape_brackets(buf);
 
   if(Tcl_Eval(spice_interp,buf) != TCL_OK) {
     Tcl_ResetResult(spice_interp);
