@@ -3,7 +3,7 @@
  * Modified 1999 Paolo Nenzi - Removed non STDC definitions
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.1 $  on $Date: 2000/04/27 20:04:01 $ "
+#define CKT "CKTdefs.h $Revision: 1.2 $  on $Date: 2000/05/25 19:46:56 $ "
 
 #define MAXNUMDEVS 32     /* Max number of possible devices; */
 extern int DEVmaxnum;     /* Not sure if still used */
@@ -314,7 +314,6 @@ extern void SENdestroy( SENstruct *);
 extern int SENsetParm( CKTcircuit *, void *, int , IFvalue *);
 extern int SENstartup( CKTcircuit *);
 extern int SPIinit( IFfrontEnd *, IFsimulator **);
-extern char * SPerror( int );
 extern int TFanal( CKTcircuit *, int );
 extern int TFaskQuest( CKTcircuit *, void *, int , IFvalue *);
 extern int TFsetParm( CKTcircuit *, void *, int , IFvalue *);
