@@ -4,7 +4,7 @@
  * Modified 2000 AlansFixes
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.1.2.3 $  on $Date: 2003/09/30 13:52:29 $ "
+#define CKT "CKTdefs.h $Revision: 1.1.2.4 $  on $Date: 2004/08/10 23:28:59 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -257,6 +257,10 @@ typedef struct {
     Enh_Ckt_Data_t *enh;  /* data used by general enhancements */
 #endif
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
+
+
+  void *element_lookup_table; /* names_t * maps strings to pointers to GENELEMENTS */ 
+  
 
 } CKTcircuit;
 
