@@ -1,6 +1,6 @@
 %option yylineno
 %option noyywrap
-%{ /* $Id: ifs_lex.l,v 1.1.2.1 2003/06/26 10:05:44 stefanjones Exp $ */
+%{ /* $Id: ifs_lex.l,v 1.1.2.2 2003/06/26 13:54:49 stefanjones Exp $ */
 
 /*============================================================================
 FILE  ifs_lex.l
@@ -86,7 +86,9 @@ E	[eE][+-]?{D}+
 
 <comment>\n             /* new line */
 
-<comment><<EOF>>		{ifs_yyerror ("Unterminated comment"); yyterminate(); }
+<comment><<EOF>>		{ifs_yyerror ("Unterminated comment"); 
+						BEGIN(INITIAL);
+						yyterminate(); }
 
 <comment>"*"+"/"        { BEGIN(INITIAL); }
 
@@ -96,8 +98,9 @@ E	[eE][+-]?{D}+
 						
 <stringl>"\""			{ BEGIN(INITIAL); }
 
-<stringl><<EOF>>		{ifs_yyerror ("Unterminated string literal"); 
-							yyterminate(); }
+<stringl><<EOF>>		{ifs_yyerror ("Unterminated string literal");
+						BEGIN(INITIAL); 
+						yyterminate(); }
 	
 allowed_types{W}*:		{BEGIN CTYPE; return TOK_ALLOWED_TYPES;}
 vector{W}*:			{BEGIN BOOL;  return TOK_ARRAY;}
