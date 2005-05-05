@@ -1,4 +1,4 @@
-%{ /* $Id: mod_yacc.y,v 1.5 2004/07/09 18:37:55 pnenzi Exp $ */
+%{ /* $Id: mod_yacc.y,v 1.6 2005/05/05 12:37:20 sjborley Exp $ */
 
 /*============================================================================
 FILE  mod_yacc.y
@@ -120,7 +120,7 @@ static char *subscript (Sub_Id_t sub_id)
 }
 
 /*--------------------------------------------------------------------------*/
-int strcmpi(s, t)
+int local_strcmpi(s, t)
      char *s;
      char *t;
      /* string compare -  case insensitive */
@@ -242,7 +242,7 @@ static int check_id (Sub_Id_t sub_id, Id_Kind_t kind, Boolean_t do_subscript)
    switch (kind) {
    case CONN:
       for (i = 0; i < mod_ifs_table->num_conn; i++) {
-	 if (0 == strcmpi (sub_id.id, mod_ifs_table->conn[i].name)) {
+	 if (0 == local_strcmpi (sub_id.id, mod_ifs_table->conn[i].name)) {
 	    if (do_subscript) {
 	       check_subscript (mod_ifs_table->conn[i].is_array,
 				sub_id.has_subscript, FALSE, "Port",
@@ -254,7 +254,7 @@ static int check_id (Sub_Id_t sub_id, Id_Kind_t kind, Boolean_t do_subscript)
       break;
    case PARAM:
       for (i = 0; i < mod_ifs_table->num_param; i++) {
-      	 if (0 == strcmpi (sub_id.id, mod_ifs_table->param[i].name)) {
+      	 if (0 == local_strcmpi (sub_id.id, mod_ifs_table->param[i].name)) {
 	    if (do_subscript) {
 	       check_subscript (mod_ifs_table->param[i].is_array,
 				sub_id.has_subscript, FALSE, "Parameter",
@@ -266,7 +266,7 @@ static int check_id (Sub_Id_t sub_id, Id_Kind_t kind, Boolean_t do_subscript)
       break;
    case STATIC_VAR:
       for (i = 0; i < mod_ifs_table->num_inst_var; i++) {
-      	 if (0 == strcmpi (sub_id.id, mod_ifs_table->inst_var[i].name)) {
+      	 if (0 == local_strcmpi (sub_id.id, mod_ifs_table->inst_var[i].name)) {
 	    if (do_subscript) {
 	       check_subscript (mod_ifs_table->inst_var[i].is_array,
 				sub_id.has_subscript, TRUE,
