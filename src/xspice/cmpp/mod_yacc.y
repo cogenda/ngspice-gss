@@ -1,4 +1,4 @@
-%{ /* $Id: mod_yacc.y,v 1.6 2005/05/05 12:37:20 sjborley Exp $ */
+%{ /* $Id: mod_yacc.y,v 1.7 2005/05/10 21:50:43 sjborley Exp $ */
 
 /*============================================================================
 FILE  mod_yacc.y
@@ -19,6 +19,8 @@ AUTHORS
 MODIFICATIONS
 
     <date> <person name> <nature of modifications>
+  20050420 Steven Borley Renamed strcmpi() to local_strcmpi() to avoid
+                         clash with strcmpi() in a windows header file.
 
 SUMMARY
 
