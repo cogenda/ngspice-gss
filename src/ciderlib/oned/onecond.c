@@ -1,6 +1,7 @@
 /**********
 Copyright 1992 Regents of the University of California.  All rights reserved.
 Author:	1987 Kartikeya Mayaram, U. C. Berkeley CAD Group
+$Id: onecond.c,v 1.3 2005/05/21 12:37:23 sjborley Exp $
 **********/
 
 /* Functions to compute device conductances and currents */
@@ -171,10 +172,8 @@ NUMDcurrent(ONEdevice *pDevice, BOOLEAN tranAnalysis, double *intCoeff,
   ONEnode *pNode;
   ONEelem *pElem;
   ONEedge *pEdge;
-  int index;
   double *delta = pDevice->dcDeltaSolution;
-  double dPsi, dN, dP, *solution;
-
+  double dPsi, dN, dP;
 
   *id = 0.0;
 
@@ -203,7 +202,6 @@ NBJTcurrent(ONEdevice *pDevice, BOOLEAN tranAnalysis, double *intCoeff,
   ONEnode *pNode;
   ONEelem *pElem;
   ONEedge *pEdge;
-  int index;
   double dPsi, dN, dP;
   double *solution;
 

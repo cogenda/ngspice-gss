@@ -1,6 +1,7 @@
 /**********
 Copyright 1991 Regents of the University of California.  All rights reserved.
 Author:	1987 Kartikeya Mayaram, U. C. Berkeley CAD Group
+$Id: integset.c,v 1.2 2005/05/21 12:37:24 sjborley Exp $
 **********/
 
 #include "ngspice.h"
@@ -92,7 +93,7 @@ void
 computePredCoeff(int method, int order, double *predCoeff, double *delta)
 {
     int i, j, k;
-    double num, denom, prod, temp;
+    double num, denom, prod;
 
     if( method == TRAPEZOIDAL && order > 2 ) {
 	printf("\n computePredCoeff: order > 2 for trapezoidal");

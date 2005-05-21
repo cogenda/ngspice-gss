@@ -1,6 +1,7 @@
 /**********
 Copyright 1992 Regents of the University of California.  All rights reserved.
 Author:	1992 David A. Gates, U. C. Berkeley CAD Group
+$Id: oneread.c,v 1.2 2005/05/21 12:37:23 sjborley Exp $
 **********/
 
 /*
@@ -29,7 +30,6 @@ ONEreadState(ONEdevice *pDevice, char *fileName, int numVolts,
   ONEnode **nodeArray=NULL;
   ONEnode *pNode;
   ONEelem *pElem;
-  ONEmaterial *info;
   double refPsi = 0.0;
   double *psiData, *nData, *pData;
   double *vData[2];
