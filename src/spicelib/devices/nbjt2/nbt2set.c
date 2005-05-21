@@ -1,6 +1,7 @@
 /**********
 Copyright 1991 Regents of the University of California.  All rights reserved.
 Author:	1987 Kartikeya Mayaram, U. C. Berkeley CAD Group
+$Id: nbt2set.c,v 1.2 2005/05/21 13:33:49 sjborley Exp $
 **********/
 
 #include "ngspice.h"
@@ -42,7 +43,7 @@ NBJT2setup(matrix, inModel, ckt, states)
   OUTPcard *outputs;
   char *icFileName = NULL;
   int nameLen;
-  int error, xIndex, yIndex;
+  int error, xIndex;
   int xMeshSize, yMeshSize;
   TWOdevice *pDevice;
   TWOcoord *xCoordList = NIL(TWOcoord);
