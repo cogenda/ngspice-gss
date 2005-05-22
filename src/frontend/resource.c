@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: resource.c,v 1.12 2005/05/21 12:24:09 sjborley Exp $
+$Id: resource.c,v 1.13 2005/05/22 20:43:17 sjborley Exp $
 **********/
 
 /*
@@ -59,14 +59,14 @@ char *enddata;
 void
 init_rlimits(void)
 {
-#  ifdef HAVE__MEMAVL   // hvogt
+#  ifdef HAVE__MEMAVL   /* hvogt */
     mem_avail = _memavl( );
 #  else
     startdata = (char *) baseaddr( );
     enddata = sbrk(0);
 #  endif
-//    startdata = (char *) baseaddr( );
-//    enddata = sbrk(0);
+/*    startdata = (char *) baseaddr( );
+      enddata = sbrk(0); */
 
 }
 
@@ -208,10 +208,10 @@ printres(char *name)
 #    else
 #      ifdef HAVE_FTIME
 	struct timeb timenow;
-//	int sec, msec; sjb
+/*	int sec, msec; sjb */
 	ftime(&timenow);
 	timediff(&timenow, &timebegin, &total, &totalu);
-//	totalu /= 1000;  hvogt
+/*	totalu /= 1000;  hvogt */
 	cpu_elapsed = "elapsed";
 #      else
 #        define NO_RUDATA
