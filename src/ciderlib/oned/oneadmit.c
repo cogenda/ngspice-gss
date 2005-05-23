@@ -1,6 +1,7 @@
 /**********
 Copyright 1992 Regents of the University of California.  All rights reserved.
 Author:	1987 Kartikeya Mayaram, U. C. Berkeley CAD Group
+$Id: oneadmit.c,v 1.3 2005/05/23 06:58:42 sjborley Exp $
 **********/
 
 /* Functions to compute small-signal parameters of 1D devices */
@@ -661,7 +662,6 @@ computeAdmittance(ONEnode *pNode, BOOLEAN delVContact, double *xReal,
   SPcomplex psi, n, p;
   SPcomplex sum, prod1, prod2;
 /*  SPcomplex yAc; */
-  double temp;
   int i;
 
 

@@ -1,6 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1987 Thomas L. Quarles
+$Id: numdask.c,v 1.2 2005/05/23 07:00:22 sjborley Exp $
 **********/
 
 #include "ngspice.h"
@@ -27,7 +28,6 @@ NUMDask(ckt, inInst, which, value, select)
   IFvalue *select;
 {
   NUMDinstance *inst = (NUMDinstance *) inInst;
-  SPcomplex yd;
 
   switch (which) {
   case NUMD_AREA:
