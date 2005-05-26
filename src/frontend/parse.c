@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: parse.c,v 1.14 2005/05/26 19:29:52 sjborley Exp $
+$Id: parse.c,v 1.15 2005/05/26 19:51:33 sjborley Exp $
 **********/
 
 /*
@@ -936,11 +936,12 @@ free_pnode_x(struct pnode *t)
     if (!t)
 	return;
     
-    /* don't walk past node used elsewhere. We decrement the pn_use value here,
+    /* don't walk past nodes used elsewhere. We decrement the pn_use value here,
        but the link gets severed by the action of the free_pnode() macro */
-    if(t->pn_use)
+    if(t->pn_use>1)
 	t->pn_use--;
     else {
+	/* pn_use is now 1, so its safe to free the pnode */
 	free_pnode(t->pn_left);
 	free_pnode(t->pn_right);
 	free_pnode(t->pn_next);
