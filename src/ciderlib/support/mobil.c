@@ -1,6 +1,7 @@
 /**********
 Copyright 1991 Regents of the University of California.  All rights reserved.
 Author:	1992 David A. Gates, U. C. Berkeley CAD Group
+$Id: mobil.c,v 1.2 2005/05/27 17:52:33 sjborley Exp $
 **********/
 
 #include "ngspice.h"
@@ -134,7 +135,7 @@ void
 MOBtempDep (MaterialInfo *info, double temp)
 {
   double  relTemp = temp / 300.0;
-  double  factor, muMin, muMax, mu0;
+  double  factor, muMin, mu0;
 
   /* Modify if necessary. */
   if (TempDepMobility)
