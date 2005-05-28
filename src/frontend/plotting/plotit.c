@@ -1,4 +1,4 @@
-/* $Id: plotit.c,v 1.5 2005/05/26 21:46:54 sjborley Exp $ */
+/* $Id: plotit.c,v 1.6 2005/05/28 17:31:49 sjborley Exp $ */
 #include <ngspice.h>
 #include <bool.h>
 #include <wordlist.h>
@@ -279,6 +279,7 @@ plotit(wordlist *wl, char *hcopy, char *devname)
      */
     if(wl->wl_prev) {
 	wl = wl->wl_prev;
+	tw = NULL;  /* Not used, so must be NULL */
     } else {
 	tw = alloc(struct wordlist);
 	wl->wl_prev = tw;
