@@ -2,9 +2,10 @@
  * Copyright (c) 1985 Thomas L. Quarles
  * Modified 1999 Paolo Nenzi - Removed non STDC definitions
  * Modified 2000 AlansFixes
+ * $Id: cktdefs.h,v 1.18 2005/05/30 20:30:09 sjborley Exp $
  */
 #ifndef CKT
-#define CKT "CKTdefs.h $Revision: 1.17 $  on $Date: 2004/08/20 09:44:08 $ "
+#define CKT "CKTdefs.h $Revision: 1.18 $  on $Date: 2005/05/30 20:30:09 $ "
 
 /* gtri - evt - wbk - 5/20/91 - add event-driven and enhancements data */
 #ifdef XSPICE
@@ -288,6 +289,9 @@ extern int CKTdltNNum(void *, int );
 extern int CKTdltNod( void *, void *);
 extern int CKTdoJob( void *, int , void *);
 extern void CKTdump( CKTcircuit *, double, void *);
+#ifdef CIDER
+extern void NDEVacct(CKTcircuit *ckt, FILE *file);
+#endif /* CIDER */
 extern void CKTncDump(CKTcircuit *);
 extern int CKTfndAnal( void *, int *, void **, IFuid , void *, IFuid );
 extern int CKTfndBranch( CKTcircuit *, IFuid);
