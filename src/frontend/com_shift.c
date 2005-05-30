@@ -1,8 +1,14 @@
+/*************
+* com_shift.c
+* $Id: com_shift.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+************/
+
 #include <config.h>
 #include <ngspice.h>
 #include <bool.h>
 #include <wordlist.h>
 
+#include "com_shift.h"
 #include "variable.h"
 #include "streams.h"
 

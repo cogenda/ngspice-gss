@@ -1,6 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
+$Id: cshpar.c,v 1.3 2005/05/30 20:28:44 sjborley Exp $
 **********/
 
 /*
@@ -33,11 +34,9 @@ Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 #include <pwd.h>
 #endif
 
-
 #ifdef HAVE_SYS_WAIT_H
 #include <sys/wait.h>
 #endif
-
 
 
 /* Things go as follows:
@@ -53,8 +52,7 @@ Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
  * (7) Do io redirection.
  */
 
-
-void fixdescriptors(void);
+/* static functions */
 static void pwlist(wordlist *wlist, char *name);
 
 

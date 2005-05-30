@@ -1,8 +1,18 @@
+/*************
+* com_chdir.c
+* $Id: com_chdir.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+************/
+
 #include <config.h>
 #include <ngspice.h>
 
 #include <wordlist.h>
 
+#ifdef HAVE_PWD_H
+#include <pwd.h>
+#endif
+
+#include "com_chdir.h"
 #include "quote.h"
 #include "streams.h"
 
@@ -12,7 +22,6 @@ com_chdir(wordlist *wl)
 {
     char *s;
     struct passwd *pw;
-    extern struct passwd *getpwuid(uid_t);
     char localbuf[257];
     int copied = 0;
 

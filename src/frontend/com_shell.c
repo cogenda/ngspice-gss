@@ -1,8 +1,13 @@
+/*************
+* com_shell.c
+* $Id: com_shell.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+************/
+
 #include <config.h>
 #include <ngspice.h>
 #include <wordlist.h>
 
-#include <cpextern.h>
+#include "com_shell.h"
 
 
 /* Fork a shell. */

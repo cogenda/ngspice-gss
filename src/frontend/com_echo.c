@@ -1,8 +1,14 @@
+/*************
+* com_echo.c
+* $Id: com_echo.c,v 1.3 2005/05/30 20:28:30 sjborley Exp $
+************/
+
 #include <config.h>
 #include <ngspice.h>
 #include <wordlist.h>
 #include <bool.h>
 
+#include "com_echo.h"
 #include "quote.h"
 #include "streams.h"
 

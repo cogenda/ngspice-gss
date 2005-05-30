@@ -1,6 +1,7 @@
 /*************
  * Header file for spiceif.c
  * 1999 E. Rouat
+ * $Id: spiceif.h,v 1.2 2005/05/30 20:28:35 sjborley Exp $
  ************/
 
 #ifndef SPICEIF_H_INCLUDED
@@ -18,6 +19,9 @@ int  if_analQbyName(void *ckt, int which, void *anal, char *name, IFvalue *parm)
 bool if_tranparams(struct circ *ci, double *start, double *stop, double *step);
 struct variable * if_getstat(void *ckt, char *name);
 
-
-
+#ifdef EXPERIMENTAL_CODE
+void com_loadsnap(wordlist *wl);
+void com_savesnap(wordlist *wl);
 #endif
+
+#endif /* SPICEIF_H_INCLUDED */

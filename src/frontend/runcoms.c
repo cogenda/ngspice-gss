@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: runcoms.c,v 1.11 2005/05/22 20:43:17 sjborley Exp $
+$Id: runcoms.c,v 1.12 2005/05/30 20:28:30 sjborley Exp $
 **********/
 
 /*
@@ -29,8 +29,6 @@ $Id: runcoms.c,v 1.11 2005/05/22 20:43:17 sjborley Exp $
 
 /* static declarations */
 static int dosim(char *what, wordlist *wl);
-
-extern struct dbcomm *dbs;
 
 /* Routines for the commands op, tran, ac, dc, listing, device, state,
  * resume, stop, trace, run, end.  Op, tran, ac, and dc cause the action

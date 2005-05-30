@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: spiceif.c,v 1.17 2005/05/21 15:51:32 sjborley Exp $
+$Id: spiceif.c,v 1.18 2005/05/30 20:28:30 sjborley Exp $
 **********/
 
 /*
@@ -1378,4 +1378,4 @@ void com_savesnap(wordlist *wl) {
 
 }
 
-#endif
+#endif /* EXPERIMENTAL_CODE */

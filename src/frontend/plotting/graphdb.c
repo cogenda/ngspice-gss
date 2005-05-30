@@ -1,6 +1,6 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
-$Id: graphdb.c,v 1.4 2005/05/29 01:05:34 sjborley Exp $
+$Id: graphdb.c,v 1.5 2005/05/30 20:28:44 sjborley Exp $
 **********/
 
 /*
@@ -14,6 +14,8 @@ $Id: graphdb.c,v 1.4 2005/05/29 01:05:34 sjborley Exp $
 
 #include "graphdb.h"
 #include "../breakp2.h"
+#include "../error.h"
+#include "../display.h"
 
 
 /* invariant:  currentgraph contains the current graph */
@@ -50,9 +52,6 @@ static int RunningId = 1;
 				(pgraph)->linestyle = -1
 
 /* returns NULL on error */
-
-extern void internalerror (char *message);
-extern void SaveText (GRAPH *graph, char *text, int x, int y);
 
 GRAPH *NewGraph(void)
 {
