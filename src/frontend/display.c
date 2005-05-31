@@ -1,6 +1,6 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
-$Id: display.c,v 1.12 2005/05/30 20:28:30 sjborley Exp $
+$Id: display.c,v 1.13 2005/05/31 00:12:18 sjborley Exp $
 **********/
 
 
@@ -26,8 +26,8 @@ static int nodev(void);
 #endif
 
 #ifdef HAS_WINDOWS	/* Graphic-IO under MS Windows */
-#include "windisp/windisp.h"
-#include "windisp/winprint.h"
+#include "wdisp/windisp.h"
+#include "wdisp/winprint.h"
 #endif
 
 #include "plotting/plot5.h"
