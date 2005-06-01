@@ -1,6 +1,6 @@
 /*************
 * com_rehash.c
-* $Id: com_rehash.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+* $Id: com_rehash.c,v 1.3 2005/06/01 11:32:38 sjborley Exp $
 ************/
 
 #include <config.h>
@@ -10,6 +10,7 @@
 #include "com_rehash.h"
 #include "streams.h"
 #include "control.h"
+#include "parser/unixcom.h"
 
 void
 com_rehash(wordlist *wl)
