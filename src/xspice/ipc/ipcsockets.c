@@ -6,6 +6,7 @@
   Georgia Tech Research Corporation, Atlanta, Georgia 30332
   All Rights Reserved
 
+  $Id: ipcsockets.c,v 1.5 2005/06/16 00:28:16 sjborley Exp $
 
   PROJECT ATESSE A-8503
 
@@ -90,7 +91,9 @@
 =============================================================================*/
 
 
-/*#ifdef IPC_UNIX_SOCKETS */
+/* #ifdef IPC_UNIX_SOCKETS */
+#include "config.h"
+#ifndef HAS_WINDOWS
 
 /*=== INCLUDE FILES ===*/
 #include "ngspice.h"
@@ -741,4 +744,5 @@ Ipc_Status_t ipc_transport_terminate_server ()
    return status;
 }
 
-/*#endif   IPC_UNIX_SOCKETS */
+/* #endif   IPC_UNIX_SOCKETS */
+#endif /* ifndef HAS_WINDOWS */
