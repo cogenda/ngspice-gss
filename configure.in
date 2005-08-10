@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.77 $)
+AC_REVISION($Revision: 1.78 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -807,6 +807,7 @@ tests/sensitivity/Makefile		\
 tests/transient/Makefile		\
 tests/transmission/Makefile		\
 tests/resistance/Makefile		\
-tests/vbic/Makefile
+tests/vbic/Makefile			\
+xgraph/Makefile
 ])
 AC_OUTPUT
