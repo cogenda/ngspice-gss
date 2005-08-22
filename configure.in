@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.78 $)
+AC_REVISION($Revision: 1.79 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -544,13 +544,19 @@ if test "$enable_xspice" = "yes"; then
     AC_PROG_YACC
     AM_PROG_LEX
     XSPICEDIR="xspice"
+    case $host_os in
+     *mingw* | *cygwin* )
+      DLLIBS="";;
+     * )
+      DLLIBS="-ldl";;
+    esac   
     XSPICELIB1="$XSPICEDIR/cm/libcmxsp.a \
     		$XSPICEDIR/mif/libmifxsp.a"
     XSPICELIB2="$XSPICEDIR/evt/libevtxsp.a \
                 $XSPICEDIR/enh/libenhxsp.a \
 	        $XSPICEDIR/ipc/libipcxsp.a \
 		$XSPICEDIR/idn/libidnxsp.a \
-		-ldl"
+		$DLLIBS"
     XSPICEINIT=""    
     XSPICETESTS=""		
 		
