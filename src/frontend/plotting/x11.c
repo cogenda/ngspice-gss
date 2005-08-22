@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1988 Jeffrey M. Hsu
-$Id: x11.c,v 1.15 2005/05/30 20:28:45 sjborley Exp $
+$Id: x11.c,v 1.16 2005/08/22 19:29:20 pnenzi Exp $
 **********/
 
 /*
@@ -301,7 +301,7 @@ handlebuttonev(Widget w, caddr_t clientdata, caddr_t calldata)
 
 
 /* Recover from bad NewViewPort call. */
-#define RECOVERNEWVIEWPORT()    tfree((char *) graph);\
+#define RECOVERNEWVIEWPORT()    tfree(graph);\
 	            graph = (GRAPH *) NULL; 
 	    /* need to do this or else DestroyGraph will free it again */
 
