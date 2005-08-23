@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:41 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2005/08/23 08:21:02 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -151,6 +151,7 @@ void cm_aswitch(ARGS)  /* structure holding parms,
     if ( PARAM(log) == MIF_TRUE ) {   /* Logarithmic Variation in 'R' */
         intermediate = log(r_off / r_on) / (cntl_on - cntl_off);
         r = r_on * exp(intermediate * (cntl_on - INPUT(cntl_in)));
+        if(r<=1.0e-9) r=1.0e-9;/* minimum resistance limiter */
         pi_pvout = 1.0 / r;
         pi_pcntl = intermediate * INPUT(out) / r;
     }
@@ -158,11 +159,12 @@ void cm_aswitch(ARGS)  /* structure holding parms,
         intermediate = (r_on - r_off) / (cntl_on - cntl_off);
         r = INPUT(cntl_in) * intermediate + ((r_off*cntl_on - 
                 r_on*cntl_off) / (cntl_on - cntl_off));
+        if(r<=1.0e-9) r=1.0e-9;/* minimum resistance limiter */
         pi_pvout = 1.0 / r;
         pi_pcntl = -intermediate * INPUT(out) / (r*r);
     }                                 
 
-    pi_pvout = 1.0 / r;
+    /*pi_pvout = 1.0 / r;*/
 
 
     if(ANALYSIS != MIF_AC) {            /* Output DC & Transient Values  */

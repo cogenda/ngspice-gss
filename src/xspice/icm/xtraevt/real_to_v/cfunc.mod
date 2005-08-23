@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.3 2004/07/09 18:38:05 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.4 2005/08/23 08:21:02 pnenzi Exp $ */
 
 
 #define TS 0
@@ -19,6 +19,8 @@ void ucm_real_to_v (ARGS)
     if(INIT) {
         t = (void *) cm_event_alloc(TS, 2 * sizeof(double));
         v = (void *) cm_event_alloc(VS, 2 * sizeof(double));
+        t = (void *) cm_event_get_ptr(TS, 0);
+        v = (void *) cm_event_get_ptr(VS, 0);
         t[0] = -2.0;
         t[1] = -1.0;
         v[0] = *in;

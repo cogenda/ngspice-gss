@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.3 2004/07/09 18:38:02 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.4 2005/08/23 08:21:02 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -120,7 +120,7 @@ NON-STANDARD FEATURES
 
     NONE
                                                    
-=============================================================================*/
+/*=============================================================================*/
 
 /*=== CM_TOGGLE_BIT ROUTINE ===*/
 
@@ -188,7 +188,7 @@ NON-STANDARD FEATURES
 
     NONE
                                                    
-=============================================================================*/
+/*=============================================================================*/
 
 /*=== CM_D_XNOR ROUTINE ===*/
 
@@ -227,6 +227,9 @@ void cm_d_xnor(ARGS)
         out = out_old = (Digital_State_t *) cm_event_alloc(0,sizeof(Digital_State_t));
 
         for (i=0; i<size; i++) LOAD(in[i]) = PARAM(input_load);
+
+        /* retrieve storage for the outputs */
+        out = out_old = (Digital_State_t *) cm_event_get_ptr(0,0);
 
     }
     else {      /* Retrieve previous values */

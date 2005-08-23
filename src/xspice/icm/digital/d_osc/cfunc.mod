@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.3 2004/07/09 18:38:00 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.4 2005/08/23 08:21:01 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -214,7 +214,13 @@ void cm_d_osc(ARGS)
         t1 = cm_analog_alloc(1,sizeof(double));
 
         t3 = cm_analog_alloc(2,sizeof(double));
-                                      
+
+        /* assign internal variables */
+        phase = phase_old = cm_analog_get_ptr(0,0);
+
+        t1 = cm_analog_get_ptr(1,0);
+                          
+        t3 = cm_analog_get_ptr(2,0);
 
     }
 
@@ -394,8 +400,8 @@ void cm_d_osc(ARGS)
 
 
             
-            free(x);
-            free(y);
+            if(x) free(x);
+            if(y) free(y);
 
 
         }

@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:38 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2005/08/23 08:21:01 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -147,6 +147,9 @@ void cm_d_nor(ARGS)
         out = out_old = (Digital_State_t *) cm_event_alloc(0,sizeof(Digital_State_t));
 
         for (i=0; i<size; i++) LOAD(in[i]) = PARAM(input_load);
+
+        /* retrieve storage for the outputs */
+        out = out_old = (Digital_State_t *) cm_event_get_ptr(0,0);
 
     }
     else {      /* Retrieve previous values */

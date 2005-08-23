@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.3 2004/07/09 18:37:59 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.4 2005/08/23 08:21:01 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -237,7 +237,14 @@ void cm_d_dlatch(ARGS)
         }
         if ( !PORT_NULL(reset) ) {
         LOAD(reset) = PARAM(reset_load);
-        }                  
+        }
+
+        /* retrieve storage for the outputs */
+        data = data_old = (Digital_State_t *) cm_event_get_ptr(0,0);
+        enable = enable_old = (Digital_State_t *) cm_event_get_ptr(1,0);
+        set = set_old = (Digital_State_t *) cm_event_get_ptr(2,0);
+        reset = reset_old =(Digital_State_t *) cm_event_get_ptr(3,0);
+        out = out_old = (Digital_State_t *) cm_event_get_ptr(4,0);
 
     }
     else {      /* Retrieve previous values */

@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.2 2003/08/05 17:20:45 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.3 2005/08/23 08:21:02 pnenzi Exp $ */
 
 
 #define CLK_STATE       0
@@ -16,6 +16,7 @@ void ucm_real_delay (ARGS)
 
     if(INIT) {
         state = (void *) cm_event_alloc(CLK_STATE, sizeof(Digital_State_t));
+        state = (void *) cm_event_get_ptr(CLK_STATE, 0);
         old_state = state;
         *state = INPUT_STATE(clk);
     }

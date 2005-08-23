@@ -1,4 +1,4 @@
-/* $Id: cfunc.mod,v 1.3 2004/07/09 18:38:00 pnenzi Exp $ */
+/* $Id: cfunc.mod,v 1.4 2005/08/23 08:21:01 pnenzi Exp $ */
 /*.......1.........2.........3.........4.........5.........6.........7.........8
 ================================================================================
 
@@ -142,6 +142,10 @@ void cm_d_open_e(ARGS)
 
         /* define input loading... */
         LOAD(in) = PARAM(input_load);
+
+        /* retrieve storage for the outputs */
+        out = out_old = (Digital_State_t *) cm_event_get_ptr(0,0);
+
     }
     else {      /* Retrieve previous values */
                                               
