@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.79 $)
+AC_REVISION($Revision: 1.80 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -518,11 +518,14 @@ if test "$enable_xgraph" = "yes"; then
     AC_MSG_RESULT(Xgraph compilation enabled.)
     AC_CONFIG_SUBDIRS(xgraph)
     XGRAPHDIR="xgraph"
+    NOTXGRAPH=""
 else
     XGRAPHDIR=""
+    NOTXGRAPH="xgraph"
 fi        
 
 AC_SUBST(XGRAPHDIR)
+AC_SUBST(NOTXGRAPH)
 
 if test "$enable_ekv" = "yes"; then
     AC_MSG_RESULT(Model EKV included)
@@ -813,7 +816,6 @@ tests/sensitivity/Makefile		\
 tests/transient/Makefile		\
 tests/transmission/Makefile		\
 tests/resistance/Makefile		\
-tests/vbic/Makefile			\
-xgraph/Makefile
+tests/vbic/Makefile
 ])
 AC_OUTPUT
