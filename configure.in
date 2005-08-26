@@ -12,7 +12,7 @@ dnl Initialisation
 dnl ---------------
 
 dnl Initialisation of configure
-AC_INIT(ng-spice-rework,15,ngspice-bugs@lists.sourceforge.net)
+AC_INIT(ng-spice-rework,16,ngspice-bugs@lists.sourceforge.net)
 
 dnl Unique file in the source directory
 AC_CONFIG_SRCDIR([src/ngspice.c])
@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.80 $)
+AC_REVISION($Revision: 1.81 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
