@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: dotcards.c,v 1.15 2005/08/26 20:22:26 pnenzi Exp $
+$Id: dotcards.c,v 1.16 2005/08/27 07:58:01 pnenzi Exp $
 **********/
 
 /*
@@ -447,35 +447,35 @@ fixem(char *string)
         else if (eq(string + 2, "0"))
                         (void) sprintf(buf, "-v(%s)", s);
         else            (void) sprintf(buf, "v(%s)-v(%s)", string + 2, s);
-    } else if (ciprefix("vm(", string)) {
+    } else if (ciprefix("vm(", string) &&strchr(string, ',')) {
         for (s = string; *s && (*s != ','); s++) ; *s++ = '\0';
         for (t = s;      *t && (*t != ')'); t++) ; *t   = '\0';
         if (eq(s, "0")) (void) sprintf(buf, "mag(v(%s))", string + 3);
         else if (eq(string + 3, "0"))
                         (void) sprintf(buf, "mag(-v(%s))", s);
         else            (void) sprintf(buf, "mag(v(%s)-v(%s))", string + 3, s);
-    } else if (ciprefix("vp(", string)) {
+    } else if (ciprefix("vp(", string) &&strchr(string, ',')) {
         for (s = string; *s && (*s != ','); s++) ; *s++ = '\0';
         for (t = s;      *t && (*t != ')'); t++) ; *t   = '\0';
         if (eq(s, "0")) (void) sprintf(buf, "ph(v(%s))", string + 3);
         else if (eq(string + 3, "0"))
                         (void) sprintf(buf, "ph(-v(%s))", s);
         else            (void) sprintf(buf, "ph(v(%s)-v(%s))", string + 3, s);
-    } else if (ciprefix("vi(", string)) {
+    } else if (ciprefix("vi(", string) &&strchr(string, ',')) {
         for (s = string; *s && (*s != ','); s++) ; *s++ = '\0';
         for (t = s;      *t && (*t != ')'); t++) ; *t   = '\0';
         if (eq(s, "0")) (void) sprintf(buf, "imag(v(%s))", string + 3);
         else if (eq(string + 3, "0"))
                         (void) sprintf(buf, "imag(-v(%s))", s);
         else            (void) sprintf(buf, "imag(v(%s)-v(%s))", string + 3, s);
-    } else if (ciprefix("vr(", string)) {
+    } else if (ciprefix("vr(", string) &&strchr(string, ',')) {
         for (s = string; *s && (*s != ','); s++) ; *s++ = '\0';
         for (t = s;      *t && (*t != ')'); t++) ; *t   = '\0';
         if (eq(s, "0")) (void) sprintf(buf, "real(v(%s))", string + 3);
         else if (eq(string + 3, "0"))
                         (void) sprintf(buf, "real(-v(%s))", s);
         else            (void) sprintf(buf, "real(v(%s)-v(%s))", string + 3, s);
-    } else if (ciprefix("vdb(", string)) {
+    } else if (ciprefix("vdb(", string) &&strchr(string, ',')) {
         for (s = string; *s && (*s != ','); s++) ; *s++ = '\0';
         for (t = s;      *t && (*t != ')'); t++) ; *t   = '\0';
         if (eq(s, "0")) (void) sprintf(buf, "db(v(%s))", string + 4);
