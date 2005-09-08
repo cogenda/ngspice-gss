@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: resource.c,v 1.15 2005/09/06 21:19:58 sjborley Exp $
+$Id: resource.c,v 1.16 2005/09/08 09:44:32 pnenzi Exp $
 **********/
 
 /*
@@ -17,7 +17,7 @@ $Id: resource.c,v 1.15 2005/09/06 21:19:58 sjborley Exp $
 #include "quote.h"
 #include "resource.h"
 #include "variable.h"
-#include "CKTdefs.h"
+#include "cktdefs.h"
 
 #ifdef XSPICE
 /* gtri - add - 12/12/90 - wbk - include ipc stuff */
