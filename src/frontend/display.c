@@ -1,6 +1,6 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
-$Id: display.c,v 1.13 2005/05/31 00:12:18 sjborley Exp $
+$Id: display.c,v 1.14 2005/09/19 20:50:27 sjborley Exp $
 **********/
 
 
@@ -102,8 +102,9 @@ DISPDEVICE device[] = {
 
 DISPDEVICE *dispdev = device + NUMELEMS(device) - 1;
 
+#ifndef XtNumber
 #define XtNumber(arr)       (sizeof(arr) / sizeof(arr[0]))
-
+#endif
 
 DISPDEVICE *FindDev(char *name)
 {
