@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: aspice.c,v 1.11 2005/05/30 20:28:30 sjborley Exp $
+$Id: aspice.c,v 1.12 2005/09/19 20:49:38 sjborley Exp $
 **********/
 
 /*
@@ -35,6 +35,15 @@ $Id: aspice.c,v 1.11 2005/05/30 20:28:30 sjborley Exp $
 
 #include "fteinp.h"
 #include "dvec.h"
+
+/*
+ This is required for the GCC pre-processor and might be needed for others
+ Added to resolve ngspice bug 1293746
+ http://sourceforge.net/tracker/index.php?func=detail&aid=1293746&group_id=38962&atid=423915
+*/
+#if !defined(SOLARIS) && defined (__SVR4) && defined(__sun)
+#  define SOLARIS
+#endif
 
 
 #ifndef SEEK_SET
@@ -111,7 +120,7 @@ com_aspice(wordlist *wl)
         }
         (void) dup2(fileno(stdout), fileno(stderr));
 
-        (void) execl(spicepath, spicepath, "-r", raw, 0);
+        (void) execl(spicepath, spicepath, "-r", raw, (void*)0);
 
         /* Screwed up. */
         perror(spicepath);
@@ -310,7 +319,7 @@ com_rspice(wordlist *wl)
 	dup2(from_serv[1], 1);	/* stdout */
 	dup2(err_serv[1], 2);	/* stderr */
 
-	execlp(remote_shell, remote_shell, rhost, program, "-s", 0);
+	execlp(remote_shell, remote_shell, rhost, program, "-s", (void*)0);
 	/* system(com_buf); */
 	perror(remote_shell);
 	exit(-1);
