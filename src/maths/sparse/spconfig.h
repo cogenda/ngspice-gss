@@ -32,8 +32,8 @@
  *  software for any purpose.  It is provided `as is', without express
  *  or implied warranty.
  *
- *  $Date: 2003/08/14 11:46:55 $
- *  $Revision: 1.6 $
+ *  $Date: 2005/12/04 08:52:20 $
+ *  $Revision: 1.7 $
  */
 
 
@@ -378,7 +378,6 @@
  *  Grab from Spice include files
  */
 
-// #include "ngspice.h"
 #define  MACHINE_RESOLUTION      DBL_EPSILON
 #define  LARGEST_REAL            DBL_MAX
 #define  SMALLEST_REAL           DBL_MIN
