@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-# $Id: Makefile.am,v 1.42 2005/10/19 07:09:37 sjborley Exp $
+# $Id: Makefile.am,v 1.43 2006/02/16 15:43:40 dwarning Exp $
 
 SUBDIRS = misc maths frontend spicelib include @XSPICEDIR@ @CIDERDIR@
 DIST_SUBDIRS = misc maths frontend spicelib include xspice ciderlib
@@ -23,6 +23,8 @@ initdata_DATA = spinit setplot spectrum @CIDERSCRIPTS@
 
 
 DYNAMIC_DEVICELIBS = 					\
+	spicelib/devices/adms/hicum0/libhicum0.a			\
+	spicelib/devices/adms/mextram/libmextram.a			\
 	spicelib/devices/asrc/libasrc.a			\
 	spicelib/devices/bjt/libbjt.a			\
 	spicelib/devices/bjt2/libbjt2.a			\
@@ -45,7 +47,6 @@ DYNAMIC_DEVICELIBS = 					\
 	spicelib/devices/cpl/libcpl.a			\
 	spicelib/devices/csw/libcsw.a			\
 	spicelib/devices/dio/libdio.a			\
-	@EKVLIB@					\
 	spicelib/devices/ind/libind.a			\
 	spicelib/devices/isrc/libisrc.a			\
 	spicelib/devices/hfet1/libhfet.a		\
