@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.85 $)
+AC_REVISION($Revision: 1.86 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -707,7 +707,6 @@ src/spinit			\
 src/spicelib/Makefile		\
 src/spicelib/analysis/Makefile	\
 src/spicelib/devices/Makefile		\
-src/spicelib/devices/adms/c/Makefile	\
 src/spicelib/devices/adms/hicum0/Makefile	\
 src/spicelib/devices/adms/mextram/Makefile	\
 src/spicelib/devices/asrc/Makefile	\
