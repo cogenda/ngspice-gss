@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.86 $)
+AC_REVISION($Revision: 1.87 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -625,9 +625,18 @@ if test "$enable_adms" = "yes"; then
       AC_MSG_ERROR(If you want adms models you should install admsXml) 
    fi 
    AC_DEFINE(ADMS,[],[Support for Verilog-A(MS) models])
-   AC_SUBST(ADMSXML)
+   
+   VLADEVDIR=" adms/hicum0 \
+               adms/mextram "
+	       
+   VLADEV=" spicelib/devices/adms/hicum0/libhic0_full.a \
+            spicelib/devices/adms/mextram/libbjt504_va.a "       
     
 fi   
+AC_SUBST(ADMSXML)
+AC_SUBST(VLADEVDIR)
+AC_SUBST(VLADEV)
+
 
 dnl Cluster option
 if test "$enable_cluster" = "yes"; then
