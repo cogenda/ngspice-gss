@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.28 2006/02/17 14:52:58 pnenzi Exp $
+ * $Id: dev.c,v 1.29 2006/02/17 14:54:16 pnenzi Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -193,7 +193,6 @@ int add_udn(int,Evt_Udn_Info_t **);
 
  #endif /* ADMS */
 
->>>>>>> 1.27
 #endif /* CIDER */
 /*Make this dynamic for later attempt to make all devices dynamic*/
 SPICEdev **DEVices=NULL;
