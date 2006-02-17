@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.26 2006/02/16 15:38:42 dwarning Exp $
+ * $Id: dev.c,v 1.27 2006/02/17 12:05:55 dwarning Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -169,7 +169,7 @@ int add_udn(int,Evt_Udn_Info_t **);
       #define DEVNUM 52
    #endif
 
- #endif
+ #endif /* ADMS */
 
 #else /* NOT CIDER */
 
@@ -188,6 +188,8 @@ int add_udn(int,Evt_Udn_Info_t **);
    #else
        #define DEVNUM 47
    #endif
+
+ #endif /* ADMS */
 
 #endif /* CIDER */
 
