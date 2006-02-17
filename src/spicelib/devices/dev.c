@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.29 2006/02/17 14:54:16 pnenzi Exp $
+ * $Id: dev.c,v 1.30 2006/02/17 17:19:24 pnenzi Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -186,10 +186,8 @@ int add_udn(int,Evt_Udn_Info_t **);
    #ifdef XSPICE
        static int DEVNUM = 47;
    #else
-       #define DEVNUM 47 */
+       #define DEVNUM 47 
    #endif
-   
- #endif
 
  #endif /* ADMS */
 
