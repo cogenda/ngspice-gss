@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group 
 Modified: 2000 AlansFixes
-$Id: subckt.c,v 1.21 2005/05/30 20:28:35 sjborley Exp $
+$Id: subckt.c,v 1.22 2006/02/21 15:25:25 pnenzi Exp $
 **********/
 
 /*------------------------------------------------------------------------------
@@ -1887,7 +1887,7 @@ inp_numnodes(char c)
         case 'm': return (7); /* This means that 7 is the maximun number of nodes */
         case 'o': return (4);
         case 'p': return (0);
-        case 'q': return (4);
+        case 'q': return (5);
         case 'r': return (2);
         case 's': return (4);
         case 't': return (4);
