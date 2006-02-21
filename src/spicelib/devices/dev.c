@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.31 2006/02/20 11:07:53 dwarning Exp $
+ * $Id: dev.c,v 1.32 2006/02/21 12:58:57 dwarning Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -90,8 +90,8 @@ int add_udn(int,Evt_Udn_Info_t **);
 
 
 #ifdef ADMS
-#include "adms/hicum0/hic0_fullitf.h"
-#include "adms/mextram/bjt504_vaitf.h"
+#include "adms/hicum0/hicum0itf.h"
+#include "adms/mextram/mextramitf.h"
 #endif
 #include "asrc/asrcitf.h"
 #include "bjt/bjtitf.h"
@@ -282,20 +282,20 @@ spice_init_devices(void)
     DEVices[50] = get_numd2_info();
     DEVices[51] = get_numos_info();    
   #ifdef ADMS
-    DEVices[52] = get_hic0_full_info();
-    DEVices[53] = get_bjt504_va_info();
+    DEVices[52] = get_hicum0_info();
+    DEVices[53] = get_mextram_info();
     assert(54 == DEVNUM);
   #else                             /* NOT ADMS */
     assert(52 == DEVNUM);
   #endif                            /* ADMS */
 #else                            /* NOT CIDER */
   #ifdef ADMS
-    DEVices[47] = get_hic0_full_info();
-    DEVices[48] = get_bjt504_va_info();
+    DEVices[47] = get_hicum0_info();
+    DEVices[48] = get_mextram_info();
     assert(49 == DEVNUM);
   #else                             /* NOT ADMS */
     assert(47 == DEVNUM);
-  #endif
+  #endif                            /* ADMS */
 #endif                           /* CIDER */
 return;
 }
