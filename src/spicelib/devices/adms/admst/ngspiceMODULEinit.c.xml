@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-  $Id: ngspiceMODULEinit.c.xml,v 1.4 2006/02/26 22:09:02 pnenzi Exp $
+  $Id: ngspiceMODULEinit.c.xml,v 1.5 2006/03/01 14:30:24 pnenzi Exp $
   $Log: ngspiceMODULEinit.c.xml,v $
+  Revision 1.5  2006/03/01 14:30:24  pnenzi
+
+  Added mdel, del and dest functions to interface.
+
   Revision 1.4  2006/02/26 22:09:02  pnenzi
 
   Added support for pole-zero analysis (experimental).
@@ -92,9 +96,9 @@ SPICEdev $(module)info = {
     NULL,         /* DEVfindBranch  */
     $(module)acLoad,   /* DEVacLoad      */
     NULL,         /* DEVaccept      */
-    NULL,  /* DEVdestroy     */
-    NULL,  /* DEVmodDelete   */
-    NULL,   /* DEVdelete      */
+    $(module)destroy,  /* DEVdestroy     */
+    $(module)mDelete,  /* DEVmodDelete   */
+    $(module)delete,   /* DEVdelete      */
     NULL,    /* DEVsetic       */
     $(module)ask,      /* DEVask         */
     $(module)mAsk,     /* DEVmodAsk      */
