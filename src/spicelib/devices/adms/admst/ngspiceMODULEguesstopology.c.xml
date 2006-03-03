@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-  $Id: ngspiceMODULEguesstopology.c.xml,v 1.4 2006/03/02 08:53:51 r29173 Exp $
+  $Id: ngspiceMODULEguesstopology.c.xml,v 1.5 2006/03/03 08:41:41 r29173 Exp $
   $Log: ngspiceMODULEguesstopology.c.xml,v $
+  Revision 1.5  2006/03/03 08:41:41  r29173
+  add missing xml code (computation of $function)
+
   Revision 1.4  2006/03/02 08:53:51  r29173
   started implementing of functions $simparam(), $given(), analysis()
 
@@ -61,6 +64,16 @@
 </admst:template>
 
 <admst:template match="function">
+  <admst:value-of select="name"/>
+  <admst:variable name="function" select="%s"/>
+  <admst:variable name="args" select=""/>
+  <admst:for-each select="arguments">
+    <admst:if test="[not($args='')]">
+      <admst:variable name="args" select="$args,"/>
+    </admst:if>
+    <admst:apply-templates select="." match="subexpression:stringify:noprobe"/>
+    <admst:variable name="args" select="$args%s"/>
+  </admst:for-each>
   <admst:choose>
     <admst:when test="[name='$simparam']">
       <admst:error format="$function($args) -- not done\n"/>
