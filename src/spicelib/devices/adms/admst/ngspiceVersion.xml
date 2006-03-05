@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- RCS Info -->
 <!--
-  $Id: ngspiceVersion.xml,v 1.10 2006/03/02 09:04:38 r29173 Exp $
+  $Id: ngspiceVersion.xml,v 1.11 2006/03/05 09:38:41 pnenzi Exp $
 -->
 <!--
   $Log: ngspiceVersion.xml,v $
+  Revision 1.11  2006/03/05 09:38:41  pnenzi
+
+  Updated version to 2.2.0
+
   Revision 1.10  2006/03/02 09:04:38  r29173
   started handling of adms elements 'case' and 'nilled'
 
@@ -36,7 +40,7 @@
 
 -->
 <!DOCTYPE admst SYSTEM "admst.dtd">
-<admst version="2.1.3" xmlns:admst="http://mot-adms.sourceforge.net/xml-files/admst">
+<admst version="2.2.0" xmlns:admst="http://mot-adms.sourceforge.net/xml-files/admst">
 
 <admst:template match=":new:jacobian">
   <admst:value-of select="module"/>
