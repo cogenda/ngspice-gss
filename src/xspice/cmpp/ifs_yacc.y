@@ -1,4 +1,4 @@
-%{ /* $Id: ifs_yacc.y,v 1.1.2.1 2003/06/26 10:05:44 stefanjones Exp $ */
+%{ /* $Id: ifs_yacc.y,v 1.1.2.2 2006/08/31 18:24:36 stefanjones Exp $ */
 
 /*============================================================================
 FILE  ifs_yacc.y
@@ -43,6 +43,7 @@ NON-STANDARD FEATURES
 ============================================================================*/
 
 #include <assert.h>
+#include <stdlib.h>
 #include "ifs_yacc.h"
 
 extern int yylineno;
