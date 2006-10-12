@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1986 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: terminal.c,v 1.5 2005/10/15 13:55:28 sjborley Exp $
+$Id: terminal.c,v 1.6 2006/10/12 02:46:26 danmc Exp $
 **********/
 
 /*
@@ -13,6 +13,10 @@ $Id: terminal.c,v 1.5 2005/10/15 13:55:28 sjborley Exp $
 
 #ifdef HAVE_SGTTY_H
 #include <sgtty.h>
+#endif
+
+#ifdef HAVE_SYS_IOCTL_H
+#include <sys/ioctl.h>
 #endif
 
 #if 0
