@@ -1,6 +1,6 @@
 /*************
 * com_shell.c
-* $Id: com_shell.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+* $Id: com_shell.c,v 1.3 2006/10/12 02:37:06 danmc Exp $
 ************/
 
 #include <config.h>
@@ -8,7 +8,7 @@
 #include <wordlist.h>
 
 #include "com_shell.h"
-
+#include "cpextern.h"
 
 /* Fork a shell. */
 
