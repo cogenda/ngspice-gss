@@ -1,8 +1,17 @@
 \input texinfo   @c -*-texinfo-*-
-@c $Id: ngspice.texi,v 1.32 2005/08/15 22:24:58 sjborley Exp $
+@c $Id: ngspice.texi,v 1.33 2006/10/12 02:49:18 danmc Exp $
 @c %**start of header
 @setfilename ngspice.info
 @include version.texi
+@format
+INFO-DIR-SECTION Simulation
+START-INFO-DIR-ENTRY
+* Ngspice: (ngspice).            General-purpose circuit simulation program for
+                                 nonlinear dc, nonlinear transient, and linear
+                                 ac analyses
+END-INFO-DIR-ENTRY
+@end format
+
 @settitle NGSPICE User Manual
 @setchapternewpage odd
 @c %**end of header
