@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.90 $)
+AC_REVISION($Revision: 1.91 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -379,7 +379,7 @@ AC_TYPE_SIGNAL
 dnl Check for a few libraries and headers:
 
 AC_HEADER_DIRENT
-AC_CHECK_HEADERS(ctype.h unistd.h pwd.h fcntl.h string.h)
+AC_CHECK_HEADERS(ctype.h unistd.h pwd.h fcntl.h string.h sys/ioctl.h stropts.h)
 AC_HEADER_SYS_WAIT
 AC_HEADER_STAT
 
