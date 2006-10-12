@@ -1,10 +1,10 @@
 ## Process this file with automake to produce Makefile.in
-# $Id: Makefile.am,v 1.44 2006/02/20 11:12:43 dwarning Exp $
+# $Id: Makefile.am,v 1.45 2006/10/12 02:38:26 danmc Exp $
 
 SUBDIRS = misc maths frontend spicelib include @XSPICEDIR@ @CIDERDIR@
 DIST_SUBDIRS = misc maths frontend spicelib include xspice ciderlib
 
-bin_PROGRAMS =  ngspice ngnutmeg nghelp makeidx
+bin_PROGRAMS =  ngspice ngnutmeg nghelp ngmakeidx
 	        	        
 if !WINDOWS
 bin_PROGRAMS += ngsconvert ngproc2mod ngmultidec
@@ -188,14 +188,14 @@ ngmultidec_LDADD =  \
 	
 endif !WINDOWS
 
-## makeidx:
+## ngmakeidx:
 
-makeidx_SOURCES = makeidx.c
+ngmakeidx_SOURCES = makeidx.c
 
 ## create index for online help:
 
-ngspice.idx: makeidx
-	./makeidx $(srcdir)/ngspice.txt
+ngspice.idx: ngmakeidx
+	./ngmakeidx $(srcdir)/ngspice.txt
 
 
 ## General Includes and libraries:
