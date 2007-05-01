@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1986 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: terminal.c,v 1.6 2006/10/12 02:46:26 danmc Exp $
+$Id: terminal.c,v 1.7 2007/05/01 03:40:18 gdiso Exp $
 **********/
 
 /*
@@ -29,7 +29,7 @@ $Id: terminal.c,v 1.6 2006/10/12 02:46:26 danmc Exp $
 #endif
 
 #ifdef HAVE_TERMCAP
-#include <termcap.h>
+#include <ncurses/termcap.h>
 #endif
 
 #include <ngspice.h>
