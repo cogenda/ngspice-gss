@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.36 2007/05/09 19:24:17 dwarning Exp $
+ * $Id: dev.c,v 1.37 2007/05/13 09:55:14 pnenzi Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -176,15 +176,15 @@ int add_udn(int,Evt_Udn_Info_t **);
 
    #ifdef NDEV
      #ifdef XSPICE
-       static int DEVNUM = 52;
+       static int DEVNUM = 53; /* was 52 */
      #else
-       #define DEVNUM 52
+       #define DEVNUM 53  /* was 52 */
      #endif
    #else /* no ndev */
       #ifdef XSPICE
-       static int DEVNUM = 51;
+       static int DEVNUM = 52; /* was 51 */
      #else
-       #define DEVNUM 51
+       #define DEVNUM 52  /* was 51 */
      #endif 
    #endif  /* NDEV */
 
