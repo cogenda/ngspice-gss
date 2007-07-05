@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-  $Id: ngspiceMODULEload.c.xml,v 1.7 2007/05/05 21:11:46 dwarning Exp $
+  $Id: ngspiceMODULEload.c.xml,v 1.8 2007/07/05 09:44:11 r29173 Exp $
   $Log: ngspiceMODULEload.c.xml,v $
+  Revision 1.8  2007/07/05 09:44:11  r29173
+  added new evaluate function (support of ddx operator used inside contribs)
+
   Revision 1.7  2007/05/05 21:11:46  dwarning
   One additional NL prevent problems in vbicload.c
 
@@ -245,11 +248,10 @@ int $(module)load(inModel,ckt)
 </admst:for-each>
 }
 {
-
-<admst:apply-templates select="analog" match="analog:evaluate"/>
+#include &quot;$module.hxx&quot;
 }
-    } /* End of MOSFET Instance */
-  } /* End of MOSFET Model */
+    } /* End of Instance */
+  } /* End of Model */
   return(OK);
 }
 
