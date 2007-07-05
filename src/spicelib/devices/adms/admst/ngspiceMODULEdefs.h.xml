@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-  $Id: ngspiceMODULEdefs.h.xml,v 1.12 2007/05/11 07:19:57 r29173 Exp $
+  $Id: ngspiceMODULEdefs.h.xml,v 1.13 2007/07/05 10:20:47 r29173 Exp $
   $Log: ngspiceMODULEdefs.h.xml,v $
+  Revision 1.13  2007/07/05 10:20:47  r29173
+  added declaration of noise variables
+
   Revision 1.12  2007/05/11 07:19:57  r29173
   added support to 'div' builtin function
 
@@ -254,6 +257,10 @@ typedef struct s$(module)instance {
   </admst:if>
   <admst:text format="\n"/>
 </admst:for-each>
+ // noise\n
+  <admst:text select="$fnoise/item" format="  double fpnoise%(index($fnoise/item,.)), fenoise%(index($fnoise/item,.));\n"/>
+  <admst:text select="$tnoise/item" format="  double tnoise%(index($tnoise/item,.));\n"/>
+  <admst:text select="$wnoise/item" format="  double wnoise%(index($wnoise/item,.));\n"/>
 
   /* variables */
 <admst:for-each select="variable[input='no' and scope='global_instance']">
