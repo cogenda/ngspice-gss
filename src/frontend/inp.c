@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.14 2005/06/09 01:38:47 sjborley Exp $
+$Id: inp.c,v 1.15 2007/09/14 14:43:02 pnenzi Exp $
 **********/
 
 /*
@@ -135,7 +135,6 @@ top1:
 	for (here = deck; here; here = here->li_next) {
             if (renumber)
                 here->li_linenum = i;
-            i++;
             if (ciprefix(".end", here->li_line) &&
                     !isalpha(here->li_line[4]))
                 continue;
@@ -156,6 +155,7 @@ top1:
                         fprintf(file, "%s\n", here->li_error);
                 }
             }
+			i++;
         }
         if (extras) {
             deck = extras;
@@ -173,7 +173,6 @@ top2:
             if ((here->li_actual == NULL) || (here == deck)) {
                 if (renumber)
                     here->li_linenum = i;
-                i++;
                 if (ciprefix(".end", here->li_line) &&
                         !isalpha(here->li_line[4]))
                     continue;
@@ -240,6 +239,7 @@ top2:
                 }
                 here->li_linenum = i;
             }
+			i++;
         }
         if (extras) {
             deck = extras;
