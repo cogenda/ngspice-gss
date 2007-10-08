@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: nutinp.c,v 1.6 2005/05/30 20:28:30 sjborley Exp $
+$Id: nutinp.c,v 1.7 2007/10/08 15:36:56 pnenzi Exp $
 **********/
 
 /*
@@ -162,6 +162,7 @@ inp_nutsource(FILE *fp, bool comfile, char *filename)
         if (deck->li_next) {
             /* There is something left after the controls. */
             fprintf(cp_out, "\nCircuit: %s\n\n", tt);
+            fprintf(stderr, "\nCircuit: %s\n\n", tt);
 
             /* Now expand subcircuit macros. Note that we have to 
              * fix the case before we do this but after we 

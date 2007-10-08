@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: parse.c,v 1.15 2005/05/26 19:51:33 sjborley Exp $
+$Id: parse.c,v 1.16 2007/10/08 15:36:56 pnenzi Exp $
 **********/
 
 /*
@@ -95,7 +95,7 @@ checkvalid(struct pnode *pn)
                         pn->pn_value->v_name);
                 else
                     fprintf(cp_err,
-                        "Error: %s: no such vector.\n",
+                        "Error(parse.c--checkvalid): %s: no such vector.\n",
                         pn->pn_value->v_name);
                 return (FALSE);
             }

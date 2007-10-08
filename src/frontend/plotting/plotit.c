@@ -1,4 +1,4 @@
-/* $Id: plotit.c,v 1.6 2005/05/28 17:31:49 sjborley Exp $ */
+/* $Id: plotit.c,v 1.7 2007/10/08 15:36:57 pnenzi Exp $ */
 #include <ngspice.h>
 #include <bool.h>
 #include <wordlist.h>
@@ -591,7 +591,7 @@ plotit(wordlist *wl, char *hcopy, char *devname)
     /* Now check for 0-length vectors. */
     for (d = vecs; d; d = d->v_link2)
         if (!d->v_length) {
-            fprintf(cp_err, "Error: %s: no such vector\n",
+            fprintf(cp_err, "Error(plotit.c--plotit): %s: no such vector\n",
                     d->v_name);
             goto quit;
         }
