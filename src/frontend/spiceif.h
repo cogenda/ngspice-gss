@@ -1,7 +1,7 @@
 /*************
  * Header file for spiceif.c
  * 1999 E. Rouat
- * $Id: spiceif.h,v 1.2 2005/05/30 20:28:35 sjborley Exp $
+ * $Id: spiceif.h,v 1.3 2007/10/08 21:45:01 pnenzi Exp $
  ************/
 
 #ifndef SPICEIF_H_INCLUDED
@@ -14,6 +14,7 @@ void if_dump(void *ckt, FILE *file);
 void if_cktfree(void *ckt, char *tab);
 char * if_errstring(int code);
 struct variable * spif_getparam(void *ckt, char **name, char *param, int ind, int do_model);
+void if_setparam_model(void *ckt, char **name, char *val);
 void if_setparam(void *ckt, char **name, char *param, struct dvec *val, int do_model);
 int  if_analQbyName(void *ckt, int which, void *anal, char *name, IFvalue *parm);
 bool if_tranparams(struct circ *ci, double *start, double *stop, double *step);

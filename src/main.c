@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.29 2005/05/31 16:47:48 sjborley Exp $
+   $Id: main.c,v 1.30 2007/10/08 21:45:01 pnenzi Exp $
 */
 
 #include <ngspice.h>
@@ -247,6 +247,10 @@ if_errstring(int code)
 }
 
 /* -------------------------------------------------------------------------- */
+void
+if_setparam_model(char *ckt, char *name, struct variable *val)
+{}
+
 void
 if_setparam(char *ckt, char *name, char *param, struct variable *val)
 {}
@@ -785,6 +789,8 @@ main(int argc, char **argv)
 
 	    case 'o':		/* Output file */
 		if (optarg) {
+		    /* turn off buffering for stdout */
+		    setbuf(stdout, NULL);
 #ifdef PARALLEL_ARCH
 		    sprintf (buf, "%s%03d", optarg, ARCHme);
 #else
