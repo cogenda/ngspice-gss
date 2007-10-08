@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-## $Id: Makefile.am,v 1.21 2005/05/30 20:28:29 sjborley Exp $
+## $Id: Makefile.am,v 1.22 2007/10/08 21:10:35 pnenzi Exp $
 
 SUBDIRS = plotting help parser wdisp @NUMPARAMDIR@
 DIST_SUBDIRS = plotting help parser wdisp numparam
@@ -120,6 +120,7 @@ libfte_a_SOURCES = \
 	interp.h	\
 	linear.c	\
 	linear.h	\
+	measure.c       \
 	misccoms.c	\
 	misccoms.h	\
 	miscvars.c	\
@@ -180,6 +181,6 @@ libfte_a_SOURCES = \
 # testcommands_LDADD = libfte.a plotting/libplotting.a ../misc/libmisc.a
 
 
-INCLUDES = -I$(top_srcdir)/src/include @X_CFLAGS@ 
+INCLUDES = -I$(top_srcdir)/src/include @X_CFLAGS@
 
 MAINTAINERCLEANFILES = Makefile.in

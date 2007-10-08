@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: nutinp.c,v 1.7 2007/10/08 15:36:56 pnenzi Exp $
+$Id: nutinp.c,v 1.8 2007/10/08 21:10:36 pnenzi Exp $
 **********/
 
 /*
@@ -33,7 +33,7 @@ inp_nutsource(FILE *fp, bool comfile, char *filename)
     wordlist *controls = NULL;
     FILE *lastin, *lastout, *lasterr;
     
-    inp_readall(fp, &deck);
+    inp_readall(fp, &deck, 0);
     if (!deck)
         return;
 

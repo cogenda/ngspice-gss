@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: runcoms.c,v 1.13 2007/10/08 20:18:41 pnenzi Exp $
+$Id: runcoms.c,v 1.14 2007/10/08 21:10:36 pnenzi Exp $
 **********/
 
 /*
@@ -323,6 +323,9 @@ dosim(char *what, wordlist *wl)
             wl->wl_prev = NULL;
         tfree(ww);
     }
+
+    if ( !err ) do_measure( ft_curckt->ci_last_an, FALSE );
+
     return err;
 }
 
