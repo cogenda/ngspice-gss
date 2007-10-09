@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-# $Id: Makefile.am,v 1.46 2007/05/01 03:42:01 gdiso Exp $
+# $Id: Makefile.am,v 1.47 2007/10/09 15:18:35 pnenzi Exp $
 
 SUBDIRS = misc maths frontend spicelib include @XSPICEDIR@ @CIDERDIR@
 DIST_SUBDIRS = misc maths frontend spicelib include xspice ciderlib
@@ -138,7 +138,8 @@ ngnutmeg_LDADD = \
 	frontend/help/libhlp.a \
 	maths/cmaths/libcmaths.a \
 	maths/poly/libpoly.a \
-	misc/libmisc.a
+	misc/libmisc.a \
+	spicelib/parser/libinp.a
 
 ## help:
 
