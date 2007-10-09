@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group 
 Modified: 2000 AlansFixes
-$Id: subckt.c,v 1.24 2007/10/08 21:45:01 pnenzi Exp $
+$Id: subckt.c,v 1.25 2007/10/09 07:19:54 pnenzi Exp $
 **********/
 
 /*------------------------------------------------------------------------------
@@ -731,8 +731,37 @@ translate(struct line *deck, char *formal, char *actual, char *scname, char *sub
       printf("\nIn translate, examining line (dev_type: %c, subname: %s, instance: %s) %s \n", dev_type, subname, scname, c->li_line );
 #endif
 
-      
-      dev_type = *(c->li_line);   
+      if ( ciprefix( ".ic", c->li_line ) || ciprefix( ".nodeset", c->li_line ) ) {
+	paren_ptr = s = c->li_line;
+	while ( ( paren_ptr = strstr( paren_ptr, "(" ) ) ) {
+	  *paren_ptr = '\0';
+	  paren_ptr++;
+	  name       = paren_ptr;
+	  
+	  if ( !( paren_ptr = strstr( paren_ptr, ")" ) ) ) {
+	    *(name-1) = '(';
+	    fprintf(cp_err, "Error: missing closing ')' for .ic|.nodeset statement %s\n", c->li_line);
+	    goto quit;
+	  }
+	  *paren_ptr = '\0';
+	  t          = gettrans(name);
+
+	  if (t) {
+	    new_str = tmalloc( strlen(s) + strlen(t) + strlen(paren_ptr+1) + 3 );
+	    sprintf( new_str, "%s(%s)%s", s, t, paren_ptr+1 ); 
+	  } else {
+	    new_str = tmalloc( strlen(s) + strlen(scname) + strlen(name) + strlen(paren_ptr+1) + 4 );
+	    sprintf( new_str, "%s(%s.%s)%s", s, scname, name, paren_ptr+1 );
+	  }
+
+	  paren_ptr = new_str + strlen(s) + 1;
+
+	  tfree(s);
+	  s = new_str;
+	}
+	c->li_line = s;
+	continue;
+      }
 
       /* Rename the device. */
         switch (dev_type) {

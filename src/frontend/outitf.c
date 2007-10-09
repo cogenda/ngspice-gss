@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1988 Wayne A. Christopher, U. C. Berkeley CAD Group 
 Modified: 2000 AlansFixes
-$Id: outitf.c,v 1.19 2007/10/08 20:18:41 pnenzi Exp $
+$Id: outitf.c,v 1.20 2007/10/09 07:19:53 pnenzi Exp $
 **********/
 
 /*
@@ -534,10 +534,10 @@ OUTpData(void *plotPtr, IFvalue *refValue, IFvalue *valuePtr)
 #ifndef HAS_WINDOWS
         if ((currclock-lastclock)>(0.25*CLOCKS_PER_SEC)) {
           if (run->isComplex) {
-              fprintf(stderr, " Reference value : % 12.5e\n",
+              fprintf(stderr, " Reference value : % 12.5e\r",
                             refValue->cValue.real);
           } else {
-              fprintf(stderr, " Reference value : % 12.5e\n",
+              fprintf(stderr, " Reference value : % 12.5e\r",
                             refValue->rValue);
           }
           lastclock = currclock;

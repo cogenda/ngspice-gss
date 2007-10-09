@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: runcoms2.c,v 1.5 2005/05/30 20:28:30 sjborley Exp $
+$Id: runcoms2.c,v 1.6 2007/10/09 07:19:54 pnenzi Exp $
 **********/
 
 /*
@@ -22,6 +22,7 @@ $Id: runcoms2.c,v 1.5 2005/05/30 20:28:30 sjborley Exp $
 #include "breakp2.h"
 #include "plotting/graf.h"
 
+#include "inpdefs.h"
 
 #define RAWBUF_SIZE 32768
 char rawfileBuf[RAWBUF_SIZE];
@@ -158,6 +159,8 @@ com_rset(wordlist *wl)
         fprintf(cp_err, "Error: there is no circuit loaded.\n");
         return;
     }
+
+    INPkillMods();
 
     if_cktfree(ft_curckt->ci_ckt, ft_curckt->ci_symtab);
     for (v = ft_curckt->ci_vars; v; v = next) {
