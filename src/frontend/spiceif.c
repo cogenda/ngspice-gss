@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: spiceif.c,v 1.20 2007/10/08 21:45:01 pnenzi Exp $
+$Id: spiceif.c,v 1.21 2007/10/10 18:46:42 dwarning Exp $
 **********/
 
 /*
@@ -47,6 +47,7 @@ they should be fairly 'safe'. However, ...
 CDHW*/
 
 #include "ngspice.h"
+#include "cktdefs.h"
 #include "cpdefs.h"
 #include "tskdefs.h" /* Is really needed ? */
 #include "ftedefs.h"
