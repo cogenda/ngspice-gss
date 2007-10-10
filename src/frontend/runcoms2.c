@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: runcoms2.c,v 1.6 2007/10/09 07:19:54 pnenzi Exp $
+$Id: runcoms2.c,v 1.7 2007/10/10 11:24:22 pnenzi Exp $
 **********/
 
 /*
@@ -159,8 +159,7 @@ com_rset(wordlist *wl)
         fprintf(cp_err, "Error: there is no circuit loaded.\n");
         return;
     }
-
-    INPkillMods();
+    INPkillMods(); 
 
     if_cktfree(ft_curckt->ci_ckt, ft_curckt->ci_symtab);
     for (v = ft_curckt->ci_vars; v; v = next) {
