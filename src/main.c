@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.31 2007/10/10 11:23:40 pnenzi Exp $
+   $Id: main.c,v 1.32 2007/10/11 11:14:19 pnenzi Exp $
 */
 
 #include <ngspice.h>
@@ -515,6 +515,7 @@ show_help(void)
     printf("Usage: %s [OPTION]... [FILE]...\n"
 	   "Simulate the electical circuits in FILE.\n"
 	   "\n"
+           "  -a  --autorun             run the loaded netlist\n"
 	   "  -b, --batch               process FILE in batch mode\n"
 	   "  -c, --circuitfile=FILE    set the circuitfile\n"
 	   "  -i, --interactive         run in interactive mode\n"
@@ -633,6 +634,9 @@ main(int argc, char **argv)
     int		err;
     bool	gotone = FALSE;
     char*       copystring;/*DG*/
+    char        addctrlsect = TRUE; /* PN: for autorun */
+
+
 #ifdef SIMULATOR
     int error2;
     
@@ -738,6 +742,7 @@ main(int argc, char **argv)
 	    {"help", 0, 0, 'h'},
 	    {"version", 0, 0, 'v'},
 	    {"batch", 0, 0, 'b'},
+            {"autorun", 0, 0, 'a'},
 	    {"circuitfile", 0, 0, 'c'},
 	    {"interactive", 0, 0, 'i'},
 	    {"no-spiceinit", 0, 0, 'n'},
@@ -749,7 +754,7 @@ main(int argc, char **argv)
 	    {0, 0, 0, 0}
 	};
 
-	c = getopt_long (argc, argv, "hvbc:ihno:qr:st:",
+	c = getopt_long (argc, argv, "hvbac:ihno:qr:st:",
 			 long_options, &option_index);
 	if (c == -1)
 	    break;
@@ -767,7 +772,16 @@ main(int argc, char **argv)
 
 	    case 'b':		/* Batch mode */
 		ft_batchmode = TRUE;
+                addctrlsect = FALSE;
+                cp_vset("addcontrol",VT_BOOL,&addctrlsect);
 		break;
+
+            case 'a':           /* Add control section for autorun */
+                if (!ft_batchmode) {
+                    addctrlsect = TRUE;
+                    cp_vset("addcontrol",VT_BOOL, &addctrlsect);
+                    }
+                break;
 
 	    case 'c':		/* Circuit file */
 		if (optarg) {
