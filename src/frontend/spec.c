@@ -1,7 +1,7 @@
 /**********
 Copyright 1994 Macquarie University, Sydney Australia.  All rights reserved.
 Author:   1994 Anthony E. Parker, Department of Electronics, Macquarie Uni.
-$Id: spec.c,v 1.5 2005/05/30 20:28:30 sjborley Exp $
+$Id: spec.c,v 1.6 2007/10/18 19:34:31 dwarning Exp $
 **********/
 
 /*
@@ -15,6 +15,7 @@ $Id: spec.c,v 1.5 2005/05/30 20:28:30 sjborley Exp $
 
 #include "spec.h"
 #include "variable.h"
+#include "missing_math.h"
 
 void
 com_spec(wordlist *wl)

@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.32 2007/10/11 11:14:19 pnenzi Exp $
+   $Id: main.c,v 1.33 2007/10/18 19:35:11 dwarning Exp $
 */
 
 #include <ngspice.h>
@@ -842,7 +842,7 @@ main(int argc, char **argv)
 		if (optarg) {
 		    cp_vset("rawfile", VT_STRING, optarg);
 		}
-		//rflag = TRUE;
+		/* rflag = TRUE; */
 		break;
 
 	    case 's':		/* Server mode */

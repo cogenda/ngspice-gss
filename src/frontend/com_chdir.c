@@ -1,6 +1,6 @@
 /*************
 * com_chdir.c
-* $Id: com_chdir.c,v 1.2 2005/05/30 20:28:30 sjborley Exp $
+* $Id: com_chdir.c,v 1.3 2007/10/18 19:34:30 dwarning Exp $
 ************/
 
 #include <config.h>
@@ -21,7 +21,9 @@ void
 com_chdir(wordlist *wl)
 {
     char *s;
+#ifdef HAVE_PWD_H
     struct passwd *pw;
+#endif
     char localbuf[257];
     int copied = 0;
 
