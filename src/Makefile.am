@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-# $Id: Makefile.am,v 1.47 2007/10/09 15:18:35 pnenzi Exp $
+# $Id: Makefile.am,v 1.48 2007/10/31 07:22:14 dwarning Exp $
 
 SUBDIRS = misc maths frontend spicelib include @XSPICEDIR@ @CIDERDIR@
 DIST_SUBDIRS = misc maths frontend spicelib include xspice ciderlib
@@ -34,6 +34,7 @@ DYNAMIC_DEVICELIBS = 					\
 	spicelib/devices/bsim3v1s/libbsim3v1s.a		\
 	spicelib/devices/bsim3v1a/libbsim3v1a.a		\
 	spicelib/devices/bsim4/libbsim4.a		\
+	spicelib/devices/bsim4v4/libbsim4v4.a		\
 	spicelib/devices/cap/libcap.a			\
 	spicelib/devices/bsim3soi/libbsim3soi.a		\
 	spicelib/devices/bsim3soi_pd/libbsim3soipd.a	\
