@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Thomas L. Quarles, 1991 David A. Gates
 Modified: 2001 Paolo Nenzi (Cider Integration)
-$Id: inpgmod.c,v 1.7 2007/10/31 07:22:12 dwarning Exp $
+$Id: inpgmod.c,v 1.8 2007/11/04 20:01:39 dwarning Exp $
 **********/
 
 #include "ngspice.h"
@@ -208,7 +208,8 @@ INPgetModBin( void* ckt, char* name, INPmodel** model, INPtables* tab, char* lin
 
   for ( modtmp = modtab; modtmp != (INPmodel*)NULL; modtmp = modtmp->INPnextModel ) {
     if ( modtmp->INPmodType != INPtypelook( "BSIM3" )   && modtmp->INPmodType != INPtypelook( "BSIM4" ) &&
-	 modtmp->INPmodType != INPtypelook( "BSIM4v4" ) && modtmp->INPmodType != INPtypelook( "BSIM4v6" ) )
+	 modtmp->INPmodType != INPtypelook( "BSIM4v2" ) && modtmp->INPmodType != INPtypelook( "BSIM4v3" ) &&
+	 modtmp->INPmodType != INPtypelook( "BSIM4v4" ) && modtmp->INPmodType != INPtypelook( "BSIM4v5" ) )
       continue;
 
     if ( parse_line( modtmp->INPmodLine->line, model_tokens, 4, parse_values, parse_found ) != TRUE )
