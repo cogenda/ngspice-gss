@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.19 2007/11/12 21:52:47 pnenzi Exp $
+$Id: inp.c,v 1.20 2007/11/13 08:05:33 dwarning Exp $
 **********/
 
 /*
@@ -765,7 +765,7 @@ inp_dodeck(struct line *deck, char *tt, wordlist *end, bool reuse,
       /* output deck */
       out_printf( "\nProcessed Netlist\n" );
       out_printf( "=================\n" );
-      int print_listing = 1;
+      print_listing = 1;
       for (dd = deck; dd; dd = dd->li_next) {
 	if ( ciprefix(".prot", dd->li_line) ) print_listing = 0;
 	if ( print_listing == 1 ) out_printf( "%s\n", dd->li_line );
