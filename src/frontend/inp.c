@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.20 2007/11/13 08:05:33 dwarning Exp $
+$Id: inp.c,v 1.21 2007/11/14 08:34:52 dwarning Exp $
 **********/
 
 /*
@@ -490,7 +490,6 @@ inp_spsource(FILE *fp, bool comfile, char *filename)
       if (deck->li_next) {
             /* There is something left after the controls. */
             fprintf(cp_out, "\nCircuit: %s\n\n", tt);
-            fprintf(stderr, "\nCircuit: %s\n\n", tt);
 
 	    /* Old location of ENHtranslate_poly.  This didn't work, because it
 	     * didn't handle models in .SUBCKTs correctly.  Moved to new location below
