@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.33 2007/10/18 19:35:11 dwarning Exp $
+   $Id: main.c,v 1.34 2007/11/14 20:27:48 dwarning Exp $
 */
 
 #include <ngspice.h>
@@ -657,13 +657,13 @@ main(int argc, char **argv)
 	OUTendDomain,
 	OUTattributes
     };
+    bool rflag = FALSE;
 #else  /* ~ SIMULATOR */
     bool gdata = TRUE;
 #endif /* ~ SIMULATOR */
 
     char buf[BSIZE_SP];
     bool readinit = TRUE;
-    bool rflag = FALSE;
     bool istty = TRUE;
     bool iflag = FALSE;
     bool qflag = FALSE;
