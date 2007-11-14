@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: spiceif.c,v 1.21 2007/10/10 18:46:42 dwarning Exp $
+$Id: spiceif.c,v 1.22 2007/11/14 08:32:57 dwarning Exp $
 **********/
 
 /*
@@ -162,7 +162,7 @@ if_inpdeck(struct line *deck, INPtables **tab)
     INPpas1((void *) ckt, (card *) deck->li_next,(INPtables *)*tab);
     INPpas2((void *) ckt, (card *) deck->li_next,
             (INPtables *) *tab,ft_curckt->ci_defTask);
-    /* INPkillMods();   PJB 09/29/03 -- keep global set of model descriptors */
+    INPkillMods();
 
     /* INPpas2 has been modified to ignore .NODESET and .IC
      * cards. These are left till INPpas3 so that we can check for
