@@ -1,14 +1,14 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: resource.c,v 1.17 2005/10/15 13:56:44 sjborley Exp $
+$Id: resource.c,v 1.18 2007/11/14 20:26:01 dwarning Exp $
 **********/
 
 /*
  * Resource-related routines.
  */
 
-#include <config.h>
+#include "config.h"
 #include "ngspice.h"
 #include "cpdefs.h"
 #include "ftedefs.h"
@@ -18,6 +18,7 @@ $Id: resource.c,v 1.17 2005/10/15 13:56:44 sjborley Exp $
 #include "resource.h"
 #include "variable.h"
 #include "cktdefs.h"
+#include "src/misc/misc_time.h" /* timediff */
 
 #ifdef XSPICE
 /* gtri - add - 12/12/90 - wbk - include ipc stuff */
