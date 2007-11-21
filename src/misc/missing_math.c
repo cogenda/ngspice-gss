@@ -1,17 +1,33 @@
 /**********
 Copyright 1991 Regents of the University of California.  All rights reserved.
-$Id: missing_math.c,v 1.3 2005/05/22 20:39:49 sjborley Exp $
+$Id: missing_math.c,v 1.4 2007/11/21 17:05:52 dwarning Exp $
 **********/
 
 /*
  * Missing math functions
  */
-#include <config.h>
+#include <assert.h>
+#include "config.h"
 #include "ngspice.h"
-#include <stdio.h>
 #include "missing_math.h"
 
+/* Initial AlmostEqualULPs version - fast and simple, but */
+/* some limitations. */
+bool AlmostEqualUlps(float A, float B, int maxUlps)
+{
+    int intDiff;
+    assert(sizeof(float) == sizeof(int));
 
+    if (A == B)
+        return TRUE;
+
+    intDiff = abs(*(int*)&A - *(int*)&B);
+
+    if (intDiff <= maxUlps)
+        return TRUE;
+
+    return FALSE;
+}
 
 #ifndef HAVE_LOGB
 
