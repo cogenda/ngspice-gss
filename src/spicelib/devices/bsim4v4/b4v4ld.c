@@ -1,6 +1,6 @@
 /****
  BSIM4.4.0  Released by Xuemei (Jane) Xi 03/04/2004
- $Id: b4v4ld.c,v 1.2 2007/11/04 19:39:47 dwarning Exp $
+ $Id: b4v4ld.c,v 1.3 2007/11/21 17:02:09 dwarning Exp $
 ****/
 
 /**********
@@ -4486,7 +4486,7 @@ line900:
             *  Loading RHS
             */
 
-   	       m = here->BSIM4v4m;
+           m = here->BSIM4v4m;
 
            (*(ckt->CKTrhs + here->BSIM4v4dNodePrime) += m * (ceqjd - ceqbd + ceqgdtot
                                                     - ceqdrn - ceqqd + Idtoteq));
