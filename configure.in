@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.52)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.97 $)
+AC_REVISION($Revision: 1.98 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADERS([config.h])
@@ -787,11 +787,12 @@ src/spicelib/devices/bjt/Makefile	\
 src/spicelib/devices/bjt2/Makefile	\
 src/spicelib/devices/bsim1/Makefile	\
 src/spicelib/devices/bsim2/Makefile	\
+src/spicelib/devices/bsim3/Makefile	\
 src/spicelib/devices/bsim3v0/Makefile	\
 src/spicelib/devices/bsim3v1/Makefile	\
 src/spicelib/devices/bsim3v1a/Makefile	\
 src/spicelib/devices/bsim3v1s/Makefile	\
-src/spicelib/devices/bsim3/Makefile	\
+src/spicelib/devices/bsim3v32/Makefile	\
 src/spicelib/devices/bsim4/Makefile	\
 src/spicelib/devices/bsim4v2/Makefile	\
 src/spicelib/devices/bsim4v3/Makefile	\
