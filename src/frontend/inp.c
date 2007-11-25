@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.22 2007/11/14 20:24:35 dwarning Exp $
+$Id: inp.c,v 1.23 2007/11/25 20:03:23 dwarning Exp $
 **********/
 
 /*
@@ -15,7 +15,7 @@ $Id: inp.c,v 1.22 2007/11/14 20:24:35 dwarning Exp $
  * the listing routines.
  */
 
-#ifndef _MSC_VER
+#ifdef HAVE_LIBGEN_H /* dirname() */
 #include <libgen.h>
 #endif
 #include "ngspice.h"
