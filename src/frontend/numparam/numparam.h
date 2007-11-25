@@ -1,6 +1,6 @@
 /*
  * numparam.h 
- * $Id: numparam.h,v 1.5 2007/10/08 14:52:26 pnenzi Exp $
+ * $Id: numparam.h,v 1.6 2007/11/25 20:00:30 dwarning Exp $
  */
 
 /*** interface to spice frontend  subckt.c ***/
@@ -28,7 +28,7 @@ Cconst(Llen,15000)
 typedef char str50 [54];
 typedef char str80 [84];
 
-Cconst(Maxline, 40000) /* size of initial unexpanded circuit code */
+Cconst(Maxline, 20000) /* size of initial unexpanded circuit code */
 Cconst(Maxckt,  40000)  /* size of expanded circuit code */
 
 

@@ -2,18 +2,14 @@
  *
  *  This file is part of Numparam, see:  readme.txt  
  *  Free software under the terms of the GNU Lesser General Public License
- * $Id: mystring.c,v 1.4 2007/10/08 14:52:26 pnenzi Exp $
+ * $Id: mystring.c,v 1.5 2007/11/25 20:00:30 dwarning Exp $
  */
-
-#ifdef __TURBOC__
-extern unsigned _stklen= 32000; /* Turbo C default was only 4 K */
-#endif
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-/* #include <math.h>  -- ceil floor */
+#include <math.h>  /* -- ceil floor */
 #include "config.h"
 #ifdef HAS_WINDOWS
 #include "wstdio.h"
@@ -593,13 +589,7 @@ Begin
   If sz<=0 Then
     return Null
   Else
-#ifdef __TURBOC__ 
-    /* truncate to 64 K ! */
-    If sz> 0xffff Then sz= 0xffff EndIf
-    p= malloc((Word)sz);
-#else
     p= malloc(sz);
-#endif
     If p==Null Then /* fatal error */
       ws(" new() failure. Program halted.\n");
       exit(1);
@@ -738,8 +728,7 @@ Begin
   Done
   return ok
 EndFunc
-
-Intern 
+ 
 Func int posi(Pchar sub, Pchar s, int opt)
 /* find position of substring in s */
 Begin
