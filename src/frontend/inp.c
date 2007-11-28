@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.23 2007/11/25 20:03:23 dwarning Exp $
+$Id: inp.c,v 1.24 2007/11/28 17:36:32 dwarning Exp $
 **********/
 
 /*
@@ -15,10 +15,18 @@ $Id: inp.c,v 1.23 2007/11/25 20:03:23 dwarning Exp $
  * the listing routines.
  */
 
-#ifdef HAVE_LIBGEN_H /* dirname() */
-#include <libgen.h>
-#endif
 #include "ngspice.h"
+
+#ifdef HAVE_LIBGEN_H /* dirname */
+#include <libgen.h>
+#define HAVE_DECL_BASENAME 1
+#endif
+
+#ifdef HAVE_LIBIBERTY_H /* asprintf etc. */
+#include <libiberty.h>
+#undef AND /* obsolete macro in ansidecl.h */
+#endif
+
 #include "cpdefs.h"
 #include "inpdefs.h"
 #include "ftedefs.h"
