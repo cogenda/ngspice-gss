@@ -5,12 +5,15 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.34 2007/11/14 20:27:48 dwarning Exp $
+   $Id: main.c,v 1.35 2007/11/28 17:45:16 dwarning Exp $
 */
 
-#include <ngspice.h>
+#include "ngspice.h"
 
-#include <stdio.h>
+#ifdef HAVE_LIBIBERTY_H /* asprintf */
+#include <libiberty.h>
+#undef AND /* obsolete macro in ansidecl.h */
+#endif
 
 #ifdef HAVE_STRING_H
 #include <string.h>
