@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1986 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: terminal.c,v 1.9 2007/09/12 17:01:21 dwarning Exp $
+$Id: terminal.c,v 1.10 2007/11/28 17:29:28 dwarning Exp $
 **********/
 
 /*
@@ -9,7 +9,7 @@ $Id: terminal.c,v 1.9 2007/09/12 17:01:21 dwarning Exp $
  * dependencies in here, and it isn't clear that versions of this stuff
  * can be written for every possible machine...
  */
-#include <config.h>
+#include "config.h"
 
 #ifdef HAVE_SGTTY_H
 #include <sgtty.h>
@@ -17,6 +17,10 @@ $Id: terminal.c,v 1.9 2007/09/12 17:01:21 dwarning Exp $
 
 #ifdef HAVE_SYS_IOCTL_H
 #include <sys/ioctl.h>
+#endif
+
+#ifdef HAVE_LIBIBERTY_H /* asprintf */
+#include <libiberty.h>
 #endif
 
 #if 0
@@ -32,7 +36,7 @@ $Id: terminal.c,v 1.9 2007/09/12 17:01:21 dwarning Exp $
 #include <ncurses/termcap.h>
 #endif
 
-#include <ngspice.h>
+#include "ngspice.h"
 #include <cpdefs.h>
 
 #include "variable.h"
