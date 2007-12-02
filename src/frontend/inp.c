@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.24 2007/11/28 17:36:32 dwarning Exp $
+$Id: inp.c,v 1.25 2007/12/02 21:56:44 dwarning Exp $
 **********/
 
 /*
@@ -39,6 +39,7 @@ $Id: inp.c,v 1.24 2007/11/28 17:36:32 dwarning Exp $
 #include "completion.h"
 #include "variable.h"
 #include "breakp2.h"
+#include "../misc/util.h" /* dirname() */
 
 #ifdef XSPICE
 /* gtri - add - 12/12/90 - wbk - include new stuff */
