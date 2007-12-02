@@ -1,6 +1,6 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
-$Id: display.c,v 1.14 2005/09/19 20:50:27 sjborley Exp $
+$Id: display.c,v 1.15 2007/12/02 21:58:19 dwarning Exp $
 **********/
 
 
@@ -59,7 +59,7 @@ DISPDEVICE device[] = {
     WIN_DrawLine, WIN_Arc, WIN_Text, WIN_DefineColor, WIN_DefineLinestyle,
     WIN_SetLinestyle, WIN_SetColor, WIN_Update,
     nodev, nodev, nodev, gen_Input,
-    gen_DatatoScreen, WIN_DiagramReady},
+    gen_DatatoScreen,}, /* WIN_DiagramReady */
 
     /* Warning: name "WinPrint" do not change! */
     {"WinPrint", 0, 0, 1000, 1000, 0, 0, WPRINT_Init, WPRINT_NewViewport,
@@ -67,7 +67,7 @@ DISPDEVICE device[] = {
     WPRINT_DrawLine, WPRINT_Arc, WPRINT_Text, WPRINT_DefineColor, WPRINT_DefineLinestyle,
     WPRINT_SetLinestyle, WPRINT_SetColor, WPRINT_Update,
     nodev, nodev, nodev, nodev,
-    gen_DatatoScreen, WPRINT_DiagramReady},
+    gen_DatatoScreen,}, /* WPRINT_DiagramReady */
 #endif
 
     {"plot5", 0, 0, 1000, 1000, 0, 0, Plt5_Init, Plt5_NewViewport,
