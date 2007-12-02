@@ -2,14 +2,14 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: dotcards.c,v 1.16 2005/08/27 07:58:01 pnenzi Exp $
+$Id: dotcards.c,v 1.17 2007/12/02 22:00:25 dwarning Exp $
 **********/
 
 /*
  * Spice-2 compatibility stuff for .plot, .print, .four, and .width.
  */
-#include <config.h>
-#include <ngspice.h>
+
+#include "ngspice.h"
 #include <assert.h>
 
 #include "cpdefs.h"
@@ -495,6 +495,7 @@ fixem(char *string)
     return (string);
 }
 
+
 static wordlist *
 gettoks(char *s)
 {
@@ -506,6 +507,7 @@ gettoks(char *s)
     list = NULL;
     prevp = &list;
 
+    s = stripWhiteSpacesInsideParens(s);
     while ((t = gettok(&s))) {
 	if (*t == '(')
 	    continue;
