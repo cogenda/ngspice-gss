@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.42 2007/11/24 12:07:36 dwarning Exp $
+ * $Id: dev.c,v 1.43 2007/12/15 16:35:35 dwarning Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -42,11 +42,13 @@
 #ifdef XSPICE
 /*saj headers for xspice*/
 #include <string.h> /* for strcpy, strcat*/
-#ifndef HAS_WINDOWS
+#if (!defined HAS_WINDOWS) && (!defined __MINGW32__)
 #include <dlfcn.h> /* to load libraries*/
 #else /* ifdef HAS_WINDOWS */
 #include <windows.h>
+#ifdef HAS_WINDOWS
 #include "wstdio.h"
+#endif
 void *dlopen (const char *, int);
 void *dlsym (void *, const char *);
 int dlclose (void *);
