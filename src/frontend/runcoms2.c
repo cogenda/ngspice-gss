@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: runcoms2.c,v 1.7 2007/10/10 11:24:22 pnenzi Exp $
+$Id: runcoms2.c,v 1.8 2007/12/15 16:29:57 dwarning Exp $
 **********/
 
 /*
@@ -82,9 +82,9 @@ com_resume(wordlist *wl)
       dofile = TRUE;
     
     if (cp_getvar("filetype", VT_STRING, buf)) {
-      if (eq(buf, "binary"))
+      if (eq(buf, "binary") || eq(buf, "{binary}"))
 	ascii = FALSE;
-      else if (eq(buf, "ascii"))
+      else if (eq(buf, "ascii") || eq(buf, "{ascii}"))
 	    ascii = TRUE;
       else
 	fprintf(cp_err,
