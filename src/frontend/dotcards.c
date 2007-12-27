@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: dotcards.c,v 1.17 2007/12/02 22:00:25 dwarning Exp $
+$Id: dotcards.c,v 1.18 2007/12/27 16:59:22 dwarning Exp $
 **********/
 
 /*
@@ -507,7 +507,7 @@ gettoks(char *s)
     list = NULL;
     prevp = &list;
 
-    s = stripWhiteSpacesInsideParens(s);
+    if (strstr( s, "(" )) s = stripWhiteSpacesInsideParens(s);
     while ((t = gettok(&s))) {
 	if (*t == '(')
 	    continue;
