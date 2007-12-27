@@ -1,6 +1,6 @@
 /**********
 Copyright 1991 Regents of the University of California.  All rights reserved.
-$Id: missing_math.c,v 1.5 2007/12/27 17:02:22 dwarning Exp $
+$Id: missing_math.c,v 1.6 2007/12/27 22:02:06 dwarning Exp $
 **********/
 
 /*
@@ -11,17 +11,18 @@ $Id: missing_math.c,v 1.5 2007/12/27 17:02:22 dwarning Exp $
 #include "ngspice.h"
 #include "missing_math.h"
 
+
 /* Initial AlmostEqualULPs version - fast and simple, but */
 /* some limitations. */
-bool AlmostEqualUlps(double A, double B, long int maxUlps)
+bool AlmostEqualUlps(float A, float B, int maxUlps)
 {
-    long int intDiff;
-    assert(sizeof(double) == sizeof(long int));
+    int intDiff;
+    assert(sizeof(float) == sizeof(int));
 
     if (A == B)
         return TRUE;
 
-    intDiff = abs(*(long int*)&A - *(long int*)&B);
+    intDiff = abs(*(int*)&A - *(int*)&B);
 
     if (intDiff <= maxUlps)
         return TRUE;
