@@ -2,14 +2,14 @@
  *
  *  This file is part of Numparam, see:  readme.txt  
  *  Free software under the terms of the GNU Lesser General Public License
- * $Id: mystring.c,v 1.6 2007/12/26 16:55:28 pnenzi Exp $
+ * $Id: mystring.c,v 1.7 2007/12/27 16:47:36 dwarning Exp $
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include <math.h>		/* -- ceil floor */
+
 #include "config.h"
 #ifdef HAS_WINDOWS
 #include "wstdio.h"

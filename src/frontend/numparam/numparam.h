@@ -1,6 +1,6 @@
 /*
  * numparam.h 
- * $Id: numparam.h,v 1.7 2007/12/26 16:55:28 pnenzi Exp $
+ * $Id: numparam.h,v 1.8 2007/12/27 16:47:36 dwarning Exp $
  */
 
 /*** interface to spice frontend  subckt.c ***/
@@ -67,7 +67,7 @@ typedef struct _ttdico {
 
 void initdico(tdico * dico);
  int donedico(tdico * dico);
- unsigned char defsubckt( tdico *dico, char * s, unsigned short w, char categ);
+ unsigned char defsubckt( tdico *dico, char * s, int w, char categ);
  int findsubckt( tdico *dico, char * s, char * subname);  
  unsigned char nupa_substitute( tdico *dico, char * s, char * r, unsigned char err);
  unsigned char nupa_assignment( tdico *dico, char *  s, char mode);
