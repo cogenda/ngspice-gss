@@ -1,12 +1,11 @@
 /*************
 * com_chdir.c
-* $Id: com_chdir.c,v 1.4 2008/01/02 12:55:55 pnenzi Exp $
+* $Id: com_chdir.c,v 1.5 2008/01/02 18:34:03 dwarning Exp $
 ************/
 
-#include <config.h>
-#include <ngspice.h>
+#include "ngspice.h"
 
-#include <wordlist.h>
+#include "wordlist.h"
 
 #ifdef HAVE_PWD_H
 #include <pwd.h>
@@ -24,7 +23,9 @@ com_chdir(wordlist *wl)
 #ifdef HAVE_PWD_H
     struct passwd *pw;
 #endif
+#ifdef HAVE_GETCWD
     char localbuf[257];
+#endif
     int copied = 0;
 
     s = NULL;
@@ -50,8 +51,8 @@ com_chdir(wordlist *wl)
 
 
     if (s != NULL)
-       if (chdir(s) == -1)
-           perror(s);
+        if (chdir(s) == -1)
+            perror(s);
 
     if (copied)
 	tfree(s);
