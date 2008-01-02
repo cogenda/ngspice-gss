@@ -1,6 +1,6 @@
 /*************
 * com_chdir.c
-* $Id: com_chdir.c,v 1.3 2007/10/18 19:34:30 dwarning Exp $
+* $Id: com_chdir.c,v 1.4 2008/01/02 12:55:55 pnenzi Exp $
 ************/
 
 #include <config.h>
@@ -49,9 +49,9 @@ com_chdir(wordlist *wl)
     }
 
 
-
-    if (*s && chdir(s) == -1)
-        perror(s);
+    if (s != NULL)
+       if (chdir(s) == -1)
+           perror(s);
 
     if (copied)
 	tfree(s);

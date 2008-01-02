@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher
-$Id: inp.c,v 1.25 2007/12/02 21:56:44 dwarning Exp $
+$Id: inp.c,v 1.26 2008/01/02 12:55:55 pnenzi Exp $
 **********/
 
 /*
@@ -534,8 +534,10 @@ inp_spsource(FILE *fp, bool comfile, char *filename)
       }     /*  if (deck->li_next) */
 
       /* look for and set temperature; also store param and .meas statements in circuit struct */
-      ft_curckt->ci_param = NULL;
-      ft_curckt->ci_meas  = NULL;
+      if (ft_curckt) {
+          ft_curckt->ci_param = NULL;
+          ft_curckt->ci_meas  = NULL;
+      }
 
       for (dd = deck; dd; dd = dd->li_next) {
 	/* get temp after numparam run on deck */
