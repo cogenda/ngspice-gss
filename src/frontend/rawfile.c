@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1986 Wayne A. Christopher, U. C. Berkeley CAD Group
-$Id: rawfile.c,v 1.10 2008/01/02 17:38:16 pnenzi Exp $
+$Id: rawfile.c,v 1.11 2008/01/02 19:53:04 pnenzi Exp $
 **********/
 
 /*
@@ -165,7 +165,7 @@ raw_write(char *name, struct plot *pl, bool app, bool binary)
         fprintf(fp, "\t%d\ti(%s)\t%s", i++, v->v_name, ft_typenames(v->v_type));
 	if ( branch != NULL ) *branch = '#';
       } else if ( strcmp( ft_typenames(v->v_type), "voltage" ) == 0 ) {
-        fprintf(fp, "\t%d\t%s\t%s", i++, v->v_name, ft_typenames(v->v_type)); /* XXX*/
+        fprintf(fp, "\t%d\t%s\t%s", i++, v->v_name, ft_typenames(v->v_type));
       } else {
         fprintf(fp, "\t%d\t%s\t%s", i++, v->v_name, ft_typenames(v->v_type));
       }
