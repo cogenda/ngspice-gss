@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.35 2007/11/28 17:45:16 dwarning Exp $
+   $Id: main.c,v 1.36 2008/01/03 07:27:38 dwarning Exp $
 */
 
 #include "ngspice.h"
@@ -660,7 +660,6 @@ main(int argc, char **argv)
 	OUTendDomain,
 	OUTattributes
     };
-    bool rflag = FALSE;
 #else  /* ~ SIMULATOR */
     bool gdata = TRUE;
 #endif /* ~ SIMULATOR */
@@ -670,6 +669,7 @@ main(int argc, char **argv)
     bool istty = TRUE;
     bool iflag = FALSE;
     bool qflag = FALSE;
+    bool rflag = FALSE;
     FILE *fp;
     FILE *circuit_file;
 
@@ -845,7 +845,7 @@ main(int argc, char **argv)
 		if (optarg) {
 		    cp_vset("rawfile", VT_STRING, optarg);
 		}
-		/* rflag = TRUE; */
+		rflag = TRUE;
 		break;
 
 	    case 's':		/* Server mode */
