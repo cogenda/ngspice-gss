@@ -2,7 +2,7 @@
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD Group
 Modified: 2000 AlansFixes
-$Id: runcoms.c,v 1.16 2007/12/29 21:11:12 dwarning Exp $
+$Id: runcoms.c,v 1.17 2008/01/04 14:13:35 pnenzi Exp $
 **********/
 
 /*
@@ -358,13 +358,16 @@ bool
 ft_getOutReq(FILE **fpp, struct plot **plotp, bool *binp, char *name, char *title)
 {
     /*struct plot *pl;*/
-#ifndef BATCH
 
+/* PN: the following code prevents operating point an AC analysis 
+ * dump in the rawfile -- it is still needed ?
+ */
+/* #ifndef BATCH
     if ( (strcmp(name, "Operating Point")==0) ||
-         (strcmp(name, "AC Operating Point")==0) ) {
+        (strcmp(name, "AC Operating Point")==0) ) {
         return (FALSE);
     };
-#endif
+#endif */
 
     if (rawfileFp) {
         *fpp = rawfileFp;
