@@ -1,4 +1,4 @@
-/* $Id: plotit.c,v 1.7 2007/10/08 15:36:57 pnenzi Exp $ */
+/* $Id: plotit.c,v 1.8 2008/03/22 13:10:49 pnenzi Exp $ */
 #include <ngspice.h>
 #include <bool.h>
 #include <wordlist.h>
@@ -14,6 +14,7 @@
 #include "plotit.h"
 #include "agraf.h"
 #include "xgraph.h"
+#include "gnuplot.h"
 #include "graf.h"
 
 static wordlist *wl_root;
@@ -960,6 +961,20 @@ plotit(wordlist *wl, char *hcopy, char *devname)
 	rtn = TRUE;
 	goto quit;
     }
+
+
+   if (devname && eq(devname, "gnuplot")) {
+	/* Interface to XGraph-11 Plot Program */
+	ft_gnuplot(xlims, ylims, hcopy,
+	    title ? title : vecs->v_plot->pl_title,
+	    xlabel ? xlabel : ft_typabbrev(vecs->v_scale->v_type),
+	    ylabel ? ylabel : ft_typabbrev(j),
+	    gtype, ptype, vecs);
+	rtn = TRUE;
+	goto quit;
+    }
+
+    
     for (d = vecs, i = 0; d; d = d->v_link2)
         i++;
 

@@ -1,5 +1,5 @@
 /* NG-SPICE -- An electrical circuit simulator
- * $Id: commands.c,v 1.6 2005/05/30 20:28:30 sjborley Exp $
+ * $Id: commands.c,v 1.7 2008/03/22 13:10:49 pnenzi Exp $
  *
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
@@ -48,6 +48,7 @@
 #include "com_plot.h"
 #include "com_setscale.h"
 #include "com_xgraph.h"
+#include "com_gnuplot.h"
 #include "com_state.h"
 #include "com_chdir.h"
 #include "com_echo.h"
@@ -149,6 +150,10 @@ struct comm spcp_coms[] = {
       { 1, 041000, 041000, 041000 }, E_DEFHMASK, 1, LOTS,
       (void (*)()) NULL,
       "file plotargs : Send plot to Xgraph-11." } ,
+    { "gnuplot", com_gnuplot, FALSE, FALSE, TRUE,
+      { 1, 041000, 041000, 041000 }, E_DEFHMASK, 1, LOTS,
+      (void (*)()) NULL,
+      "file plotargs : Send plot to gnuplot." } ,
     { "hardcopy", com_hardcopy, FALSE, FALSE, TRUE,
       { 1, 041000, 041000, 041000 }, E_DEFHMASK, 0, LOTS,
       (void (*)()) NULL,
@@ -540,6 +545,10 @@ struct comm nutcp_coms[] = {
       { 1, 041000, 041000, 041000 }, E_DEFHMASK, 1, LOTS,
       (void (*)()) NULL,
       "file plotargs : Send plot to Xgraph-11." } ,
+    { "gnuplot", com_gnuplot, FALSE, FALSE, TRUE,
+      { 1, 041000, 041000, 041000 }, E_DEFHMASK, 1, LOTS,
+      (void (*)()) NULL,
+      "file plotargs : Send plot to gnuplot." } ,
     { "hardcopy", com_hardcopy, FALSE, FALSE, TRUE,
       { 1, 041000, 041000, 041000 }, E_DEFHMASK, 0, LOTS,
       (void (*)()) NULL,
