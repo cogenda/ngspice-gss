@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1985 Thomas L. Quarles
-$Id: ifeval.c,v 1.2 2005/06/10 07:14:30 sjborley Exp $
+$Id: ifeval.c,v 1.3 2008/03/23 11:40:10 dwarning Exp $
 **********/
 
 #include "ngspice.h"
@@ -32,7 +32,7 @@ IFeval(IFparseTree * tree, double gmin, double *result, double *vals,
     INPparseTree *myTree = (INPparseTree *) tree;;
 
 #ifdef TRACE
-    INPptPrint("calling PTeval, tree = ", myTree);
+    INPptPrint("calling PTeval, tree = ", tree);
     printf("values:");
     for (i = 0; i < myTree->p.numVars; i++)
 	printf("\tvar%d = %lg\n", i, vals[i]);

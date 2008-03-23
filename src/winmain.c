@@ -4,7 +4,7 @@
 	Autor: Holger Vogt
 	Stand: 01.05.2000
 	Stand: 12.12.2001
- $Id: winmain.c,v 1.5 2005/05/24 09:44:22 sjborley Exp $
+ $Id: winmain.c,v 1.6 2008/03/23 11:40:15 dwarning Exp $
 */
 #include "config.h"
 #ifdef HAS_WINDOWS
@@ -42,7 +42,7 @@
 #define SE 0				// String termination
 #define BorderSize 8			// Umrandung des Stringfeldes
 #define SBufSize 100			// Groesze des Stringbuffers
-#define IOBufSize 1024			// Groesze des printf-Buffers
+#define IOBufSize 4096			// Groesze des printf-Buffers
 #define HistSize 20			// Zeilen History-Buffer
 #define StatusHeight 25			// Hoehe des Status Bars
 #define StatusFrame 2			// Abstand Statusbar / StatusElement
