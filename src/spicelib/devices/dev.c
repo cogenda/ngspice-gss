@@ -3,7 +3,7 @@
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
  *
- * $Id: dev.c,v 1.43 2007/12/15 16:35:35 dwarning Exp $
+ * $Id: dev.c,v 1.44 2008/04/13 12:46:38 h_vogt Exp $
  *
  * Permission to use, copy, modify, and distribute this software and
  * its documentation without fee, and without a written agreement is
@@ -45,6 +45,7 @@
 #if (!defined HAS_WINDOWS) && (!defined __MINGW32__)
 #include <dlfcn.h> /* to load libraries*/
 #else /* ifdef HAS_WINDOWS */
+#undef BOOLEAN
 #include <windows.h>
 #ifdef HAS_WINDOWS
 #include "wstdio.h"
