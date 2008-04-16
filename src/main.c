@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.38 2008/04/13 14:29:16 h_vogt Exp $
+   $Id: main.c,v 1.39 2008/04/16 20:18:26 dwarning Exp $
 */
 
 #include "ngspice.h"
@@ -790,8 +790,8 @@ main(int argc, char **argv)
 	    case 'c':		/* Circuit file */
 		if (optarg) {
 		    if (!(circuit_file = fopen(optarg, "r"))) {
-			perror("circuit file not available");
-			sp_shutdown(EXIT_BAD);
+			  perror("circuit file not available");
+			  sp_shutdown(EXIT_BAD);
 		    }
 		    istty = FALSE;
 		}
@@ -996,8 +996,10 @@ bot:
 	   current algorithm is uniform at the expense of a little
 	   startup time.  */
 	FILE *tempfile;
+#ifdef HAS_WINDOWS
 	char *tpf;
 	bool has_smk = FALSE;
+#endif	
 	tempfile = tmpfile();
 /*	tmpfile() returns NULL, if in MS Windows as non admin user
         then we add a tempfile in the local directory */
