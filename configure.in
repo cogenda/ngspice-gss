@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.59)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.105 $)
+AC_REVISION($Revision: 1.106 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADER([config.h])
@@ -907,6 +907,7 @@ AC_CONFIG_FILES([Makefile
                  tests/bsim3/Berkeley/3v2/ac_sim/Makefile
                  tests/bsim3/Berkeley/3v2/dc_sim/Makefile
                  tests/bsim3/Berkeley/3v2/tran_sim/Makefile
+                 tests/bsim3soi/Makefile
                  tests/bsim3soidd/Makefile
                  tests/bsim3soifd/Makefile
                  tests/bsim3soipd/Makefile
