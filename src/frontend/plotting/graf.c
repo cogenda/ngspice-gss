@@ -1,7 +1,7 @@
 /**********
 Copyright 1990 Regents of the University of California.  All rights reserved.
 Author: 1988 Jeffrey M. Hsu
-$Id: graf.c,v 1.9 2005/05/29 01:05:33 sjborley Exp $
+$Id: graf.c,v 1.10 2008/04/28 18:39:10 h_vogt Exp $
 **********/
 
 /*
@@ -683,7 +683,7 @@ iplot(struct plot *pl, int id)
 	/* note: have command options for iplot to specify xdelta,
 	   etc.  So don't need static variables hack.  Assume default
 	   values for now.  */
-	sprintf(commandline, "iplot %s", xs->v_name);
+	sprintf(commandline, "plot %s", yl);
 
         (void) gr_init(xlims, ylims, xs->v_name,
             pl->pl_title, (char *) NULL, j, 0.0, 0.0,
