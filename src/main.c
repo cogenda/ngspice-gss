@@ -5,7 +5,7 @@
    Author: 1985 Wayne A. Christopher
 
    The main routine for ngspice
-   $Id: main.c,v 1.39 2008/04/16 20:18:26 dwarning Exp $
+   $Id: main.c,v 1.40 2008/05/03 16:05:48 dwarning Exp $
 */
 
 #include "ngspice.h"
@@ -18,10 +18,6 @@
 #ifdef HAVE_STRING_H
 #include <string.h>
 #endif /* HAVE_STRING_H */
-
-#if defined(__MINGW32__) || defined(_MSC_VER)
-#define  srandom(a) srand(a) /* srandom */
-#endif /* __MINGW32__ */
 
 #include <setjmp.h>
 #include <signal.h>
