@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-# $Id: Makefile.am,v 1.50 2007/11/24 12:07:37 dwarning Exp $
+# $Id: Makefile.am,v 1.51 2008/05/10 16:07:25 h_vogt Exp $
 
 SUBDIRS = misc maths frontend spicelib include @XSPICEDIR@ @CIDERDIR@
 DIST_SUBDIRS = misc maths frontend spicelib include xspice ciderlib
@@ -211,5 +211,9 @@ ngspice.idx: ngmakeidx
 INCLUDES = -I$(top_srcdir)/src/include -I$(top_srcdir)/src/spicelib/devices @X_CFLAGS@
 
 LIBS = @LIBS@ @X_LIBS@ @X_PRE_LIBS@ @X_EXTRA_LIBS@
+
+if WINDOWS
+LIBS += -lpsapi
+endif
 
 MAINTAINERCLEANFILES = Makefile.in ngspice.idx
