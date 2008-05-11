@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-## $Id: Makefile.am,v 1.10 2005/05/21 13:37:31 sjborley Exp $
+## $Id: Makefile.am,v 1.11 2008/05/11 20:32:20 dwarning Exp $
 
 noinst_LIBRARIES = libmisc.a
 
@@ -14,8 +14,6 @@ libmisc_a_SOURCES = \
 		dup2.h		\
 		ivars.c		\
 		ivars.h		\
-		missing_math.c	\
-		missing_math.h	\
 		mktemp.c	\
 		mktemp.h	\
 		printnum.c	\
