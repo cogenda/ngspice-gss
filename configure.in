@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.59)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.108 $)
+AC_REVISION($Revision: 1.109 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADER([config.h])
@@ -153,10 +153,6 @@ AC_ARG_ENABLE(ndev,
 dnl --enable-cluster: define CLUSTER in the code. This is for cluster support
 AC_ARG_ENABLE(cluster,
     AS_HELP_STRING([--enable-cluster],[Enable cluster support, (experimental) ]))
-
-dnl --enable-numparam: define NUMPARAMS in the code. This is for .param support
-AC_ARG_ENABLE(numparam,
-    AS_HELP_STRING([--enable-numparam],[Enable numparam library support, (experimental) ]))
 
 dnl --enable-xgraph: Compile the xgraph plotting program. Default is "no".
 dnl Xgraph is a plotting package for X11 once very popular.
@@ -713,29 +709,6 @@ if test "$enable_expdevices" = "yes"; then
 	  AC_DEFINE(EXP_DEV,[],[Define if we want to enable experimental devices])
 	  AC_MSG_RESULT(WARNING: Experimental devices enabled)
 fi
-
-dnl --enable-dot-global: Enable use of the .global keyword (experimental)
-AC_MSG_CHECKING([whether .gobal keyword has been enabled])
-AC_ARG_ENABLE(dot-global,
-    AS_HELP_STRING([--enable-dot-global],[Enable use of the .global keyword (experimental)]),
-    [if test "$enable_dot_global" = "yes"; then
-        AC_DEFINE([GLOBAL_NODE],[1],[Define to enable the .global keyword])
-    fi],
-    [enable_dot_global="no"])
-AC_MSG_RESULT($enable_dot_global)
-
-if test "$enable_numparam" = "yes"; then
-    AC_MSG_RESULT(Numparam library is enabled)
-    AC_DEFINE(NUMPARAMS,[1],[Spice .param support])
-    NUMPARAMDIR="numparam"
-    NUMPARAMLIB="frontend/numparam/libnumparam.a"
-else
-    NUMPARAMDIR=""
-    NUMPARAMLIB=""
-fi
-AC_SUBST(NUMPARAMDIR)
-AC_SUBST(NUMPARAMLIB)
-
 
 dnl  ----  Option to include GNU readline support in ngspice CLI  ----
 dnl  ----  Default: disabled.                                     ----

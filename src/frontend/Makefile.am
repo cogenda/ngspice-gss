@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
-## $Id: Makefile.am,v 1.23 2008/03/22 13:10:48 pnenzi Exp $
+## $Id: Makefile.am,v 1.24 2008/05/12 15:53:07 dwarning Exp $
 
-SUBDIRS = plotting help parser wdisp @NUMPARAMDIR@
+SUBDIRS = plotting help parser wdisp numparam
 DIST_SUBDIRS = plotting help parser wdisp numparam
 
 noinst_LIBRARIES = libfte.a
