@@ -8,7 +8,7 @@ Georgia Tech Research Corporation
 Atlanta, Georgia 30332
 All Rights Reserved
 
-$Id: ipc.c,v 1.6 2008/01/12 16:24:22 dwarning Exp $
+$Id: ipc.c,v 1.7 2008/05/21 20:32:55 dwarning Exp $
 
 PROJECT A-8503
 
@@ -71,12 +71,6 @@ SUMMARY
 ============================================================================*/
 
 #include "ngspice.h"
-
-#if defined (__MINGW32__) || defined (__CYGWIN__)
-#include <io.h>
-#else
-#include <sys/io.h>
-#endif
 
 #include <assert.h>
 #include <memory.h>     /* NOTE: I think this is a Sys5ism (there is not man
