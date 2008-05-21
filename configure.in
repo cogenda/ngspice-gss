@@ -23,7 +23,7 @@ dnl problem to the user.  (2.52 is a guess and might need some adjustment)
 AC_PREREQ(2.59)
 
 dnl Revison stamp the generated ./configure script
-AC_REVISION($Revision: 1.111 $)
+AC_REVISION($Revision: 1.112 $)
 
 dnl Create a configuration header
 AC_CONFIG_HEADER([config.h])
@@ -185,10 +185,7 @@ AM_MAINTAINER_MODE
 dnl Compiler checks
 dnl ---------------
 
-if test -z "$CC"; then
-# No C compiler specified... We rely on Autoconf to find the best
-   AC_PROG_CC
-fi
+AC_PROG_CC
 
 dnl Work on compiler options according to system:
 dnl Set default CFLAG - only use -Wall if we have gcc
