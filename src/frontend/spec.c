@@ -1,7 +1,7 @@
 /**********
 Copyright 1994 Macquarie University, Sydney Australia.  All rights reserved.
 Author:   1994 Anthony E. Parker, Department of Electronics, Macquarie Uni.
-$Id: spec.c,v 1.6 2007/10/18 19:34:31 dwarning Exp $
+$Id: spec.c,v 1.7 2008/05/24 18:21:44 h_vogt Exp $
 **********/
 
 /*
@@ -257,6 +257,9 @@ com_spec(wordlist *wl)
 	         fdvec[i][j].cx_imag += value*sina;
           }
        }
+#ifdef HAS_WINDOWS
+       SetAnalyse( "spec", (int)(j * 100/ fpts));
+#endif          
     }
     if (startf==0) {
        freq[0] = 0;
