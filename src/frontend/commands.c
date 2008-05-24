@@ -1,5 +1,5 @@
 /* NG-SPICE -- An electrical circuit simulator
- * $Id: commands.c,v 1.7 2008/03/22 13:10:49 pnenzi Exp $
+ * $Id: commands.c,v 1.8 2008/05/24 18:06:38 h_vogt Exp $
  *
  * Copyright (c) 1990 University of California
  * Copyright (c) 2000 Arno W. Peters
@@ -256,6 +256,10 @@ struct comm spcp_coms[] = {
       { 0, 0, 0, 0 }, E_DEFHMASK, 0, 0,
       (void (*)()) NULL,
       ": Print a dump of the current circuit." } ,
+    { "fft", com_fft, FALSE, FALSE, TRUE,
+      { 0, 0, 0, 0 }, E_DEFHMASK, 1, LOTS,
+      (void (*)()) NULL,
+      "vector ... : Create a frequency domain plot with FFT." } ,      
     { "fourier", com_fourier, FALSE, FALSE, TRUE,
       { 0, 040000, 040000, 040000 }, E_DEFHMASK, 1, LOTS,
       (void (*)()) NULL,

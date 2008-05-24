@@ -1,5 +1,5 @@
 ## Process this file with automake to produce Makefile.in
-## $Id: Makefile.am,v 1.24 2008/05/12 15:53:07 dwarning Exp $
+## $Id: Makefile.am,v 1.25 2008/05/24 18:06:37 h_vogt Exp $
 
 SUBDIRS = plotting help parser wdisp numparam
 DIST_SUBDIRS = plotting help parser wdisp numparam
@@ -55,6 +55,8 @@ libfte_a_SOURCES = \
 	com_shell.h	\
 	com_shift.c	\
 	com_shift.h	\
+	com_fft.c	\
+	com_fft.h	\
 	com_state.c	\
 	com_state.h	\
 	com_strcmp.c	\
