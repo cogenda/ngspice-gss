@@ -1,7 +1,7 @@
 /**********
 Copyright 1994 Macquarie University, Sydney Australia.  All rights reserved.
 Author:   1994 Anthony E. Parker, Department of Electronics, Macquarie Uni.
-$Id: spec.c,v 1.7 2008/05/24 18:21:44 h_vogt Exp $
+$Id: spec.c,v 1.8 2008/05/25 18:35:42 dwarning Exp $
 **********/
 
 /*
