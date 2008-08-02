@@ -19,6 +19,7 @@ int NDEVaccept(CKTcircuit *ckt, GENmodel *inModel)
 {
   NDEVmodel *model = (NDEVmodel *)inModel;
   NDEVinstance *here;
+  int i;
   /*  loop through all the ndev models */
   for( ; model != NULL; model = model->NDEVnextModel ) 
   {
@@ -36,6 +37,13 @@ int NDEVaccept(CKTcircuit *ckt, GENmodel *inModel)
              here->CKTInfo.dt_old   = ckt->CKTdeltaOld[0];
              here->CKTInfo.accept_flag = 1;
 	     send(model->sock,&here->CKTInfo,sizeof(sCKTinfo),0);
+
+	     /* update pin states */
+	     for(i=0;i<here->term;i++)
+	     {
+	       here->PINinfos[i].V_old = here->PINinfos[i].V;
+	       here->PINinfos[i].V = *(ckt->CKTrhsOld+here->pin[i]);
+	     }
         }
   } 
   return (OK);

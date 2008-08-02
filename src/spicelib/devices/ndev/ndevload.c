@@ -44,9 +44,10 @@ NDEVload(GENmodel * inModel, CKTcircuit * ckt)
 	     /* send terminal voltage to device simulator */
              for(i=0;i<here->term;i++)
 	     {
-	       here->PINinfos[i].V_old = here->PINinfos[i].V;
-	       here->PINinfos[i].V = *(ckt->CKTrhsOld+here->pin[i]);
-	       send(model->sock,&here->PINinfos[i],sizeof(here->PINinfos[i]),0);
+	       sPINinfo PINbuf;
+	       memcpy(&PINbuf,&here->PINinfos[i],sizeof(PINbuf));
+	       PINbuf.V = *(ckt->CKTrhsOld+here->pin[i]);
+	       send(model->sock,&PINbuf,sizeof(PINbuf),0);
 	     }
         }
     } 
@@ -60,6 +61,13 @@ NDEVload(GENmodel * inModel, CKTcircuit * ckt)
         for (here = model->NDEVinstances; here != NULL ; here=here->NDEVnextInstance) 
 	{ 
 	     if (here->NDEVowner != ARCHme) continue;
+	     recv(model->sock,&here->CKTInfo,sizeof(sCKTinfo),MSG_WAITALL);
+	     if (here->CKTInfo.convergence_flag<0) {
+	       ckt->CKTnoncon++;
+	       ckt->CKTtroubleElt = (GENinstance *) here;
+	       continue;
+	     }
+
              /* reveive terminal current and conductional matrix from device simulator */
 	     for(i=0;i<here->term;i++)  
 	     {
